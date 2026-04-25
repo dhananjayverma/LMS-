@@ -1,10 +1,22 @@
 const params = new URLSearchParams(window.location.search);
+const historyBackButton = document.querySelector(".history-back");
 
 const title = params.get("title") || "Course Overview";
 const category = params.get("category") || "CU LMS Course";
 const progress = params.get("progress") || "Open";
 const lessons = params.get("lessons") || "Structured lessons";
 const providedImage = params.get("image") || "";
+
+if (historyBackButton) {
+  historyBackButton.addEventListener("click", () => {
+    if (window.history.length > 1) {
+      window.history.back();
+      return;
+    }
+
+    window.location.href = "index.html#courses";
+  });
+}
 
 const catalog = [
   {
