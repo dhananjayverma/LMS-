@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Details | CU LMS Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="course-detail.css" />
+  </head>
+  <body>
+    <header class="course-header">
+      <a class="course-brand" href="index.html#home" aria-label="Back to CU LMS home">
+        <img src="log1.png" alt="Chandigarh University logo" />
+      </a>
+      <a class="back-link" href="index.html#courses">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 12H5"></path>
+          <path d="m11 18-6-6 6-6"></path>
+        </svg>
+        <span>Back to Courses</span>
+      </a>
+    </header>
+
+    <main class="course-shell">
+      <section class="detail-hero">
+        <div class="detail-hero__copy">
+          <span class="course-chip" id="course-category">CU LMS Course</span>
+          <h1 id="course-title">Course Overview</h1>
+          <p id="course-summary">
+            Explore lessons, assessments, resources, and learning outcomes for this course.
+          </p>
+
+          <div class="detail-actions">
+            <a class="detail-btn detail-btn--primary" href="#modules">Start Learning</a>
+            <a class="detail-btn detail-btn--light" href="index.html#courses">View Other Courses</a>
+          </div>
+
+          <div class="quick-facts" aria-label="Course quick facts">
+            <div>
+              <span>Duration</span>
+              <strong>5 Days</strong>
+            </div>
+            <div>
+              <span>Level</span>
+              <strong>Guided</strong>
+            </div>
+            <div>
+              <span>Format</span>
+              <strong>Lessons + Practice</strong>
+            </div>
+          </div>
+        </div>
+
+        <aside class="detail-panel" aria-label="Course summary">
+          <div class="course-media">
+            <img id="course-image" src="Frame 414.png" alt="Course preview" />
+            <div class="progress-ring" aria-label="Course progress">
+              <span id="course-progress-percent">0%</span>
+              <small>Complete</small>
+            </div>
+          </div>
+          <div class="detail-stats">
+            <div>
+              <span>Progress</span>
+              <strong id="course-progress">Open</strong>
+            </div>
+            <div>
+              <span>Lessons</span>
+              <strong id="course-lessons">Structured lessons</strong>
+            </div>
+            <div>
+              <span>Mode</span>
+              <strong>Online</strong>
+            </div>
+          </div>
+          <div class="status-card">
+            <span class="status-dot"></span>
+            <div>
+              <strong>Next recommended step</strong>
+              <p id="next-step">Open Day 1 and finish the first learning task.</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <nav class="course-nav" aria-label="Course sections">
+        <a href="#overview">Overview</a>
+        <a href="#modules">Daily Plan</a>
+        <a href="#resources">Resources</a>
+        <a href="#assessment">Assessment</a>
+      </nav>
+
+      <section class="content-grid" id="overview">
+        <article class="content-card content-card--highlight">
+          <span class="section-kicker">About</span>
+          <h2>What You Will Learn</h2>
+          <p id="course-description">
+            This course brings together guided lectures, practice tasks, assessments, and
+            academic resources so students can learn with clarity and track their progress.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <span class="section-kicker">Outcomes</span>
+          <h2>Learning Outcomes</h2>
+          <ul id="course-outcomes"></ul>
+        </article>
+
+        <article class="content-card content-card--wide" id="modules">
+          <div class="card-heading">
+            <div>
+              <span class="section-kicker">Daily Plan</span>
+              <h2>Day-by-Day Learning Path</h2>
+            </div>
+            <span class="plan-badge">5 focused days</span>
+          </div>
+          <div class="module-timeline" id="course-modules"></div>
+        </article>
+
+        <aside class="content-card side-card">
+          <span class="section-kicker">Includes</span>
+          <h2>Course Support</h2>
+          <ul class="support-list">
+            <li>Lecture notes and recorded sessions</li>
+            <li>Assignments with submission tracking</li>
+            <li>Quiz and assessment preparation</li>
+            <li>Progress dashboard and resources</li>
+          </ul>
+        </aside>
+
+        <article class="content-card resources-card" id="resources">
+          <span class="section-kicker">Resources</span>
+          <h2>Study Kit</h2>
+          <div class="resource-grid">
+            <div>
+              <strong>Lecture Notes</strong>
+              <span>Topic-wise PDF notes</span>
+            </div>
+            <div>
+              <strong>Practice Set</strong>
+              <span>Daily questions and tasks</span>
+            </div>
+            <div>
+              <strong>Recorded Session</strong>
+              <span>Replay important concepts</span>
+            </div>
+            <div>
+              <strong>Doubt Support</strong>
+              <span>Raise academic queries</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card assessment-card" id="assessment">
+          <span class="section-kicker">Assessment</span>
+          <h2>How You Will Be Evaluated</h2>
+          <div class="assessment-list">
+            <div>
+              <span>30%</span>
+              <strong>Daily practice</strong>
+            </div>
+            <div>
+              <span>30%</span>
+              <strong>Assignments</strong>
+            </div>
+            <div>
+              <span>40%</span>
+              <strong>Final quiz</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card next-card">
+          <div>
+            <span class="section-kicker">Ready</span>
+            <h2>Continue Your Learning Journey</h2>
+            <p>
+              Follow the day-wise plan, complete each task, and use the resources whenever you
+              need a quick revision.
+            </p>
+          </div>
+          <a class="detail-btn detail-btn--primary" href="#modules">Go to Day 1</a>
+        </article>
+      </section>
+    </main>
+
+    <script src="course-detail.js"></script>
+  </body>
+</html>

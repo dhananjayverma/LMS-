@@ -751,6 +751,7 @@ svg {
   outline: none;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .course-card::before {
@@ -1016,6 +1017,7 @@ svg {
     opacity 220ms ease,
     border-color 220ms ease;
   outline: none;
+  cursor: pointer;
 }
 
 .discover-card__image {
