@@ -20,7 +20,7 @@
             <img class="brand__logo" src="log1.png" alt="Chandigarh University logo" />
           </a>
 
-          <nav class="navbar__links" aria-label="Primary">
+          <nav class="navbar__links" id="primary-navigation" aria-label="Primary">
             <a class="nav-link active" href="#home">Home</a>
             <a class="nav-link" href="#dashboard">Dashboard</a>
             <a class="nav-link" href="#courses">My Courses</a>
@@ -50,6 +50,17 @@
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 9l6 6 6-6"></path>
               </svg>
+            </button>
+            <button
+              class="menu-btn"
+              type="button"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="primary-navigation"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
             </button>
           </div>
         </div>
@@ -213,6 +224,11 @@
                 <p>Mid-term examinations will start from 20th May 2024.</p>
                 <a href="#resources">View All</a>
               </div>
+              <span class="announcement-card__arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M9 6l6 6-6 6"></path>
+                </svg>
+              </span>
             </article>
           </div>
         </section>
@@ -358,7 +374,7 @@
           </div>
 
           <div class="discover-grid">
-            <article class="discover-card" tabindex="0">
+            <article class="discover-card animate-fade-up" tabindex="0">
               <img
                 class="discover-card__image"
                 src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
@@ -395,7 +411,7 @@
               </div>
             </article>
 
-            <article class="discover-card" tabindex="0">
+            <article class="discover-card animate-fade-up" style="--delay: 1" tabindex="0">
               <img
                 class="discover-card__image"
                 src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80"
@@ -431,7 +447,7 @@
               </div>
             </article>
 
-            <article class="discover-card" tabindex="0">
+            <article class="discover-card animate-fade-up" style="--delay: 2" tabindex="0">
               <img
                 class="discover-card__image"
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
@@ -468,7 +484,7 @@
               </div>
             </article>
 
-            <article class="discover-card" tabindex="0">
+            <article class="discover-card animate-fade-up" style="--delay: 3" tabindex="0">
               <img
                 class="discover-card__image"
                 src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80"
@@ -724,14 +740,19 @@
     </div>
 
     <footer class="site-footer">
+      <div class="footer-bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
       <div class="footer-content shell">
         <div class="footer-grid">
-          <div class="footer-column">
+          <div class="footer-column animate-fade-up">
             <h3 class="footer-title">Get in touch</h3>
             <p class="footer-description">Platform designed to help organizations, educators, and learners manage, deliver, and track learning and training activities.</p>
           </div>
 
-          <div class="footer-column">
+          <div class="footer-column animate-fade-up" style="--delay: 1">
             <h3 class="footer-title">Popular Courses</h3>
             <ul class="footer-links">
               <li><a href="#">Profile</a></li>
@@ -741,7 +762,7 @@
             </ul>
           </div>
 
-          <div class="footer-column">
+          <div class="footer-column animate-fade-up" style="--delay: 2">
             <h3 class="footer-title">Company</h3>
             <ul class="footer-links">
               <li><a href="#">About Us</a></li>
@@ -751,7 +772,7 @@
             </ul>
           </div>
 
-          <div class="footer-column">
+          <div class="footer-column animate-fade-up" style="--delay: 3">
             <h3 class="footer-title">Contact Info</h3>
             <p class="footer-description">Sign up to get updates & news.</p>
             <form class="newsletter-form">
