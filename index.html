@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CU LMS Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header shell">
+        <div class="navbar">
+          <a class="brand" href="#home" aria-label="Chandigarh University">
+            <img class="brand__logo" src="log1.png" alt="Chandigarh University logo" />
+          </a>
+
+          <nav class="navbar__links" aria-label="Primary">
+            <a class="nav-link active" href="#home">Home</a>
+            <a class="nav-link" href="#dashboard">Dashboard</a>
+            <a class="nav-link" href="#courses">My Courses</a>
+            <a class="nav-link" href="#moocs">MOOCs Courses</a>
+            <a class="nav-link" href="#calendar">Calendar</a>
+            <a class="nav-link" href="#resources">Resources</a>
+          </nav>
+
+          <div class="navbar__actions">
+            <button class="circle-btn" type="button" aria-label="Search">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="M16 16l5 5"></path>
+              </svg>
+            </button>
+            <button class="circle-btn notification-btn" type="button" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 17H4.5a1 1 0 0 1-.76-1.65l1.26-1.48V9a7 7 0 1 1 14 0v4.87l1.26 1.48A1 1 0 0 1 19.5 17H18"></path>
+                <path d="M9 19a3 3 0 0 0 6 0"></path>
+              </svg>
+              <span class="notification-badge">3</span>
+            </button>
+            <button class="profile-btn" type="button" aria-label="Profile">
+              <span>D.</span>
+            </button>
+            <button class="chevron-btn" type="button" aria-label="Open profile menu">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="shell">
+        <section class="hero" id="home">
+          <div class="hero__content">
+            <div class="hero__eyebrow">
+              <span class="hero__eyebrow-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 9l9-5 9 5-9 5-9-5Z"></path>
+                  <path d="M7 11v4c0 1.3 2.24 3 5 3s5-1.7 5-3v-4"></path>
+                </svg>
+              </span>
+              <span>Digital Gateway to Learning at CU</span>
+            </div>
+
+            <h1 class="hero__title">
+              Smart, Seamless &amp;<br />
+              Centralised Learning<br />
+              <span>for All</span>
+            </h1>
+
+            <p class="hero__description">
+              CU LMS is Chandigarh University's unified digital learning platform that brings
+              courses, lectures, assessments, and academic resources together in one place.
+            </p>
+
+            <div class="hero__actions">
+              <a class="primary-btn" href="#dashboard">
+                <span>Go to Dashboard</span>
+                <span class="btn-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="M13 6l6 6-6 6"></path>
+                  </svg>
+                </span>
+              </a>
+              <a class="secondary-btn" href="#courses">
+                <span>Explore Courses</span>
+                <span class="btn-icon btn-icon--light">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="M13 6l6 6-6 6"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            <div class="feature-list">
+              <div class="feature-item">
+                <span class="feature-icon feature-icon--red">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17.5A1.5 1.5 0 0 0 18.5 19H6.5A2.5 2.5 0 0 0 4 21.5z"></path>
+                    <path d="M8 7h8"></path>
+                    <path d="M8 11h8"></path>
+                  </svg>
+                </span>
+                <div>
+                  <strong>All in One</strong>
+                  <span>Courses, assignments,<br />lectures &amp; more</span>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon feature-icon--amber">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8"></circle>
+                    <path d="M12 8v5l3 2"></path>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Real-time Access</strong>
+                  <span>Learn anytime,<br />anywhere</span>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon feature-icon--orange">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="6" width="18" height="12" rx="2"></rect>
+                    <path d="M8 20h8"></path>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Across Devices</strong>
+                  <span>Seamless experience<br />on all devices</span>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon feature-icon--rose">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3l7 3v5c0 4.97-3.05 8.47-7 10-3.95-1.53-7-5.03-7-10V6z"></path>
+                    <path d="M9.5 12.5l1.8 1.8 3.7-4"></path>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Secure &amp; Reliable</strong>
+                  <span>Your data is safe<br />with us</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <div class="hero__shape hero__shape--main"></div>
+            <div class="hero__shape hero__shape--soft"></div>
+            <div class="hero__dots hero__dots--left"></div>
+            <div class="hero__dots hero__dots--right"></div>
+
+            <img
+              class="hero__image"
+              src="Frame 414.png"
+              alt="Students standing together with books and backpacks"
+            />
+
+            <article class="floating-card floating-card--top">
+              <div class="floating-card__icon floating-card__icon--rose">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="5" y="4" width="14" height="16" rx="2"></rect>
+                  <path d="M9 9h6"></path>
+                  <path d="M9 13h6"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>My Courses</strong>
+                <span class="floating-card__count">08</span>
+                <small>Enrolled</small>
+              </div>
+            </article>
+
+            <article class="floating-card floating-card--middle">
+              <div class="floating-card__icon floating-card__icon--amber">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 4h8l4 4v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"></path>
+                  <path d="M14 4v4h4"></path>
+                  <path d="M9 13h6"></path>
+                  <path d="M9 17h4"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Assignments</strong>
+                <span class="floating-card__count">05</span>
+                <small>Pending</small>
+              </div>
+            </article>
+
+            <article class="announcement-card">
+              <div class="announcement-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12v4a2 2 0 0 0 2 2h1"></path>
+                  <path d="M15 8.5V16"></path>
+                  <path d="M19 5v14"></path>
+                  <path d="M19 6c-2 0-3.5.5-5 1.4C12.5 8.5 11 9 9 9H5v6h4c2 0 3.5.5 5 1.6 1.5.9 3 1.4 5 1.4"></path>
+                </svg>
+              </div>
+              <div class="announcement-card__content">
+                <strong>Important Announcement</strong>
+                <p>Mid-term examinations will start from 20th May 2024.</p>
+                <a href="#resources">View All</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="courses-section" id="courses">
+          <div class="section-header">
+            <div>
+              <h2>Top Courses We Have</h2>
+              <p>Discover your next interest area</p>
+            </div>
+            <div class="section-header__actions">
+              <button class="slider-btn slider-btn--light" type="button" aria-label="Previous courses">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 6l-6 6 6 6"></path>
+                </svg>
+              </button>
+              <button class="slider-btn slider-btn--brand" type="button" aria-label="Next courses">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="course-grid">
+            <article class="course-card course-card--violet" tabindex="0">
+              <span class="course-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 5h8a3 3 0 0 1 3 3v11H7a3 3 0 0 0-3 3z"></path>
+                  <path d="M20 5h-8a3 3 0 0 0-3 3v11h8a3 3 0 0 1 3 3z"></path>
+                </svg>
+              </span>
+              <h3>CONT_23TDT-362 :: APTITUDE-IV</h3>
+              <p>4603 Students Enrolled</p>
+              <div class="progress">
+                <div class="progress__track">
+                  <span style="width: 75%"></span>
+                </div>
+                <strong>75% Completed</strong>
+              </div>
+            </article>
+
+            <article class="course-card course-card--blue" tabindex="0">
+              <span class="course-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+                  <path d="M9 12h.01"></path>
+                  <path d="M15 12h.01"></path>
+                  <path d="M12 9v6"></path>
+                </svg>
+              </span>
+              <h3>CONT_25CSH-103 :: DATA STRUCTURES AND ALGORITHMS</h3>
+              <p>6884 Students Enrolled</p>
+              <div class="progress">
+                <div class="progress__track">
+                  <span style="width: 60%"></span>
+                </div>
+                <strong>60% Completed</strong>
+              </div>
+            </article>
+
+            <article class="course-card course-card--pink" tabindex="0">
+              <span class="course-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 4h7l5 5v11H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"></path>
+                  <path d="M14 4v5h5"></path>
+                  <circle cx="16.5" cy="16.5" r="2.5"></circle>
+                </svg>
+              </span>
+              <h3>CONT_25PCP-111 :: COMMUNICATION SKILLS-II</h3>
+              <p>6845 Students Enrolled</p>
+              <div class="progress">
+                <div class="progress__track">
+                  <span style="width: 40%"></span>
+                </div>
+                <strong>40% Completed</strong>
+              </div>
+            </article>
+
+            <article class="course-card course-card--green" tabindex="0">
+              <span class="course-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="5" y="5" width="14" height="14" rx="3"></rect>
+                  <path d="M9 15l6-6"></path>
+                  <path d="M9 9h.01"></path>
+                  <path d="M15 15h.01"></path>
+                </svg>
+              </span>
+              <h3>CONT_25SMT-198 :: MATHEMATICS-II</h3>
+              <p>6567 Students Enrolled</p>
+              <div class="progress">
+                <div class="progress__track">
+                  <span style="width: 80%"></span>
+                </div>
+                <strong>80% Completed</strong>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="discover-section" aria-labelledby="discover-courses-title">
+          <div class="discover-header">
+            <div class="discover-header__copy">
+              <span class="discover-header__eyebrow">What's New</span>
+              <h2 id="discover-courses-title">My Courses</h2>
+              <p>Discover your perfect program in our courses.</p>
+            </div>
+
+            <div class="discover-toolbar" aria-label="Course filters">
+              <label class="toolbar-field toolbar-field--search" aria-label="Search courses">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="6.5"></circle>
+                  <path d="M16 16l5 5"></path>
+                </svg>
+                <input type="search" placeholder="Search" />
+              </label>
+
+              <label class="toolbar-field toolbar-field--select" aria-label="Category filter">
+                <select>
+                  <option>All</option>
+                  <option>Web Design</option>
+                  <option>Music</option>
+                  <option>Development</option>
+                  <option>Photography</option>
+                </select>
+              </label>
+
+              <label class="toolbar-field toolbar-field--select toolbar-field--wide" aria-label="Sort courses">
+                <select>
+                  <option>Sort By Course Name</option>
+                  <option>Sort By Popularity</option>
+                  <option>Sort By Latest</option>
+                </select>
+              </label>
+
+              <label class="toolbar-field toolbar-field--select" aria-label="Layout view">
+                <select>
+                  <option>Grid</option>
+                  <option>List</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="discover-grid">
+            <article class="discover-card" tabindex="0">
+              <img
+                class="discover-card__image"
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                alt="People reviewing interface wireframes on a desk"
+              />
+              <div class="discover-card__body">
+                <div class="discover-card__meta">
+                  <span>Web Design</span>
+                  <span class="discover-card__badge">60%</span>
+                </div>
+                <h3>Information About UI/UX Design Degree</h3>
+              </div>
+              <div class="discover-card__footer">
+                <div class="discover-card__stats">
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v14H6.5A2.5 2.5 0 0 0 4 20.5z"></path>
+                      <path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v14h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path>
+                    </svg>
+                    5 Lessons
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.8 5.68 6.27.91-4.54 4.43 1.07 6.25L12 17.27 6.4 20.27l1.07-6.25L2.93 9.6l6.27-.91Z"></path>
+                    </svg>
+                    4.5 rating
+                  </span>
+                </div>
+                <img
+                  class="discover-card__avatar"
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
+                  alt="Course mentor"
+                />
+              </div>
+            </article>
+
+            <article class="discover-card" tabindex="0">
+              <img
+                class="discover-card__image"
+                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80"
+                alt="Music studio with guitars and instruments"
+              />
+              <div class="discover-card__body">
+                <div class="discover-card__meta">
+                  <span>Music</span>
+                </div>
+                <h3>Information About Music Work</h3>
+              </div>
+              <div class="discover-card__footer">
+                <div class="discover-card__stats">
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v14H6.5A2.5 2.5 0 0 0 4 20.5z"></path>
+                      <path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v14h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path>
+                    </svg>
+                    5 Lessons
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.8 5.68 6.27.91-4.54 4.43 1.07 6.25L12 17.27 6.4 20.27l1.07-6.25L2.93 9.6l6.27-.91Z"></path>
+                    </svg>
+                    4.5 rating
+                  </span>
+                </div>
+                <img
+                  class="discover-card__avatar"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+                  alt="Course mentor"
+                />
+              </div>
+            </article>
+
+            <article class="discover-card" tabindex="0">
+              <img
+                class="discover-card__image"
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+                alt="Laptop setup for web development"
+              />
+              <div class="discover-card__body">
+                <div class="discover-card__meta">
+                  <span>Web Development</span>
+                  <span class="discover-card__badge">60%</span>
+                </div>
+                <h3>Information About Development Work</h3>
+              </div>
+              <div class="discover-card__footer">
+                <div class="discover-card__stats">
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v14H6.5A2.5 2.5 0 0 0 4 20.5z"></path>
+                      <path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v14h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path>
+                    </svg>
+                    5 Lessons
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.8 5.68 6.27.91-4.54 4.43 1.07 6.25L12 17.27 6.4 20.27l1.07-6.25L2.93 9.6l6.27-.91Z"></path>
+                    </svg>
+                    4.5 rating
+                  </span>
+                </div>
+                <img
+                  class="discover-card__avatar"
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80"
+                  alt="Course mentor"
+                />
+              </div>
+            </article>
+
+            <article class="discover-card" tabindex="0">
+              <img
+                class="discover-card__image"
+                src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80"
+                alt="Photographer using a camera outdoors"
+              />
+              <div class="discover-card__body">
+                <div class="discover-card__meta">
+                  <span>Photography</span>
+                </div>
+                <h3>Information About Development Work</h3>
+              </div>
+              <div class="discover-card__footer">
+                <div class="discover-card__stats">
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v14H6.5A2.5 2.5 0 0 0 4 20.5z"></path>
+                      <path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v14h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path>
+                    </svg>
+                    5 Lessons
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.8 5.68 6.27.91-4.54 4.43 1.07 6.25L12 17.27 6.4 20.27l1.07-6.25L2.93 9.6l6.27-.91Z"></path>
+                    </svg>
+                    4.5 rating
+                  </span>
+                </div>
+                <img
+                  class="discover-card__avatar"
+                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80"
+                  alt="Course mentor"
+                />
+              </div>
+            </article>
+
+            <article class="discover-card" tabindex="0">
+              <img
+                class="discover-card__image"
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                alt="People reviewing interface wireframes on a desk"
+              />
+              <div class="discover-card__body">
+                <div class="discover-card__meta">
+                  <span>Web Design</span>
+                </div>
+                <h3>Information About UI/UX Design Degree</h3>
+              </div>
+              <div class="discover-card__footer">
+                <div class="discover-card__stats">
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v14H6.5A2.5 2.5 0 0 0 4 20.5z"></path>
+                      <path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v14h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path>
+                    </svg>
+                    5 Lessons
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.8 5.68 6.27.91-4.54 4.43 1.07 6.25L12 17.27 6.4 20.27l1.07-6.25L2.93 9.6l6.27-.91Z"></path>
+                    </svg>
+                    4.5 rating
+                  </span>
+                </div>
+                <img
+                  class="discover-card__avatar"
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80"
+                  alt="Course mentor"
+                />
+              </div>
+            </article>
+
+            <article class="discover-card" tabindex="0">
+              <img
+                class="discover-card__image"
+                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80"
+                alt="Music studio with guitars and instruments"
+              />
+              <div class="discover-card__body">
+                <div class="discover-card__meta">
+                  <span>Music</span>
+                  <span class="discover-card__badge">60%</span>
+                </div>
+                <h3>Information About Music Work</h3>
+              </div>
+              <div class="discover-card__footer">
+                <div class="discover-card__stats">
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v14H6.5A2.5 2.5 0 0 0 4 20.5z"></path>
+                      <path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v14h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path>
+                    </svg>
+                    5 Lessons
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.8 5.68 6.27.91-4.54 4.43 1.07 6.25L12 17.27 6.4 20.27l1.07-6.25L2.93 9.6l6.27-.91Z"></path>
+                    </svg>
+                    4.5 rating
+                  </span>
+                </div>
+                <img
+                  class="discover-card__avatar"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+                  alt="Course mentor"
+                />
+              </div>
+            </article>
+
+            <article class="discover-card" tabindex="0">
+              <img
+                class="discover-card__image"
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+                alt="Laptop setup for web development"
+              />
+              <div class="discover-card__body">
+                <div class="discover-card__meta">
+                  <span>Web Development</span>
+                </div>
+                <h3>Information About Development Work</h3>
+              </div>
+              <div class="discover-card__footer">
+                <div class="discover-card__stats">
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v14H6.5A2.5 2.5 0 0 0 4 20.5z"></path>
+                      <path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v14h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path>
+                    </svg>
+                    5 Lessons
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.8 5.68 6.27.91-4.54 4.43 1.07 6.25L12 17.27 6.4 20.27l1.07-6.25L2.93 9.6l6.27-.91Z"></path>
+                    </svg>
+                    4.5 rating
+                  </span>
+                </div>
+                <img
+                  class="discover-card__avatar"
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80"
+                  alt="Course mentor"
+                />
+              </div>
+            </article>
+
+            <article class="discover-card" tabindex="0">
+              <img
+                class="discover-card__image"
+                src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80"
+                alt="Photographer using a camera outdoors"
+              />
+              <div class="discover-card__body">
+                <div class="discover-card__meta">
+                  <span>Photography</span>
+                  <span class="discover-card__badge">60%</span>
+                </div>
+                <h3>Information About UI/UX Design Degree</h3>
+              </div>
+              <div class="discover-card__footer">
+                <div class="discover-card__stats">
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v14H6.5A2.5 2.5 0 0 0 4 20.5z"></path>
+                      <path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v14h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path>
+                    </svg>
+                    5 Lessons
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.8 5.68 6.27.91-4.54 4.43 1.07 6.25L12 17.27 6.4 20.27l1.07-6.25L2.93 9.6l6.27-.91Z"></path>
+                    </svg>
+                    4.5 rating
+                  </span>
+                </div>
+                <img
+                  class="discover-card__avatar"
+                  src="https://images.unsplash.com/photo-1542204625-de293a2f8ff5?auto=format&fit=crop&w=120&q=80"
+                  alt="Course mentor"
+                />
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="benefits-section" aria-labelledby="benefits-title">
+          <div class="benefits-copy">
+            <span class="benefits-eyebrow">Why CU LMS</span>
+            <h2 id="benefits-title">Benefits from our online learning</h2>
+            <p>
+              Get certified, build practical skills, and stay on track with a learning
+              experience designed for campus life and career growth.
+            </p>
+
+            <div class="benefits-actions">
+              <a class="benefits-btn benefits-btn--dark" href="#courses">Join Course</a>
+              <a class="benefits-btn benefits-btn--brand" href="#resources">Learn More</a>
+            </div>
+          </div>
+
+          <div class="benefits-grid">
+            <article class="benefit-card benefit-card--mint">
+              <span class="benefit-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 18h6"></path>
+                  <path d="M10 22h4"></path>
+                  <path d="M12 2a7 7 0 0 0-4 12.74C8.63 15.2 9 16.08 9 17h6c0-.92.37-1.8 1-2.26A7 7 0 0 0 12 2Z"></path>
+                </svg>
+              </span>
+              <h3>Stay motivated with engaging instructors</h3>
+              <p>Live support, timely feedback, and guided sessions help you keep moving.</p>
+            </article>
+
+            <article class="benefit-card benefit-card--sand">
+              <span class="benefit-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12"></path>
+                  <path d="m8 7 4-4 4 4"></path>
+                  <path d="M6 15.5A3.5 3.5 0 0 0 9.5 19H15a4 4 0 0 0 .8-7.92A5 5 0 0 0 6 12.5"></path>
+                </svg>
+              </span>
+              <h3>Access resources anytime, on any device</h3>
+              <p>Notes, lectures, and assignments stay synced across your study routine.</p>
+            </article>
+
+            <article class="benefit-card benefit-card--peach">
+              <span class="benefit-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m4 20 4.5-1 10-10a2.12 2.12 0 1 0-3-3l-10 10L4 20Z"></path>
+                  <path d="m13.5 6.5 4 4"></path>
+                </svg>
+              </span>
+              <h3>Practice with real coursework and assessments</h3>
+              <p>Track progress through quizzes, submissions, and structured milestones.</p>
+            </article>
+
+            <article class="benefit-card benefit-card--lavender">
+              <span class="benefit-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 9.5 12 5l9 4.5-9 4.5-9-4.5Z"></path>
+                  <path d="M7 12v4.5c0 1.3 2.24 2.5 5 2.5s5-1.2 5-2.5V12"></path>
+                </svg>
+              </span>
+              <h3>Build confidence with guided academic journeys</h3>
+              <p>Clear learning paths make it easier to stay focused from beginner to pro.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-anchor" id="dashboard" aria-hidden="true"></section>
+        <section class="page-anchor" id="moocs" aria-hidden="true"></section>
+        <section class="page-anchor" id="calendar" aria-hidden="true"></section>
+        <section class="page-anchor" id="resources" aria-hidden="true"></section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-content shell">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3 class="footer-title">Get in touch</h3>
+            <p class="footer-description">Platform designed to help organizations, educators, and learners manage, deliver, and track learning and training activities.</p>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-title">Popular Courses</h3>
+            <ul class="footer-links">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Register</a></li>
+              <li><a href="#">Dashboard</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-title">Company</h3>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-title">Contact Info</h3>
+            <p class="footer-description">Sign up to get updates & news.</p>
+            <form class="newsletter-form">
+              <div class="newsletter-input-wrapper">
+                <svg class="newsletter-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <input type="email" placeholder="Enter Email Address" class="newsletter-input" required />
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content shell">
+          <p class="footer-copyright">Copyright © 2025 LMS Theme All Rights Reserved</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter" class="social-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2s9 5 20 5a9.5 9.5 0 0 0-9-5.5c4.75 2.25 7-7 7-7"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 2h-3a6 6 0 0 0-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="social-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
