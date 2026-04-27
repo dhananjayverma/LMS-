@@ -364,7 +364,7 @@
           timeline: 'Flexible',
           charges: 'Free to Audit',
           description: 'A foundational online program created in collaboration between DeepLearning.AI and Stanford Online. This specialization will help you master the fundamentals of AI.',
-          image: 'https://images.unsplash.com/photo-1555255707-c07966488bc0?auto=format&fit=crop&w=800&q=80',
+          image: 'images/ml.png',
           avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80'
         },
         {
@@ -377,7 +377,7 @@
           timeline: 'Self-paced',
           charges: '$49 (Certificate)',
           description: 'An overview of the ideas, methods, and institutions that permit human society to manage risks and foster enterprise.',
-          image: 'https://images.unsplash.com/photo-1611974717482-48a0053d824d?auto=format&fit=crop&w=800&q=80',
+          image: 'images/finance.png',
           avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80'
         },
         {
@@ -633,7 +633,7 @@
 
     function createCourseCard(course) {
       return `
-        <article class="discover-card animate-fade-up" tabindex="0" role="button">
+        <article class="mooc-card animate-fade-up" tabindex="0" role="button">
           <img class="discover-card__image" src="${course.image}" alt="${course.title}" />
           <div class="discover-card__body">
             <div class="discover-card__meta">
@@ -680,9 +680,10 @@
         const gridHtml = `<div class="discover-grid">${courses.map(course => createCourseCard(course)).join('')}</div>`;
         mainContent.innerHTML = gridHtml;
 
-        const newCards = mainContent.querySelectorAll('.discover-card');
+        const newCards = mainContent.querySelectorAll('.mooc-card');
         newCards.forEach((card, index) => {
           card.addEventListener('click', (e) => {
+            e.preventDefault();
             e.stopPropagation();
             openModal(courses[index], platform);
           });
