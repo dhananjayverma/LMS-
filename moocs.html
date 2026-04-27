@@ -25,8 +25,7 @@
           <a class="nav-link" href="index.html#dashboard">Dashboard</a>
           <a class="nav-link" href="index.html#courses">My Courses</a>
           <a class="nav-link active" href="moocs.html">MOOCs Courses</a>
-          <!-- <a class="nav-link" href="index.html#calendar">Calendar</a>
-            <a class="nav-link" href="index.html#resources">Resources</a> -->
+
         </nav>
 
         <div class="navbar__actions">
@@ -44,14 +43,30 @@
             </svg>
             <span class="notification-badge">3</span>
           </button>
-          <button class="profile-btn" type="button" aria-label="Profile">
-            <span>D.</span>
-          </button>
-          <button class="chevron-btn" type="button" aria-label="Open profile menu">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 9l6 6 6-6"></path>
-            </svg>
-          </button>
+          <div class="profile-dropdown" id="profileDropdown">
+            <button class="profile-btn" type="button" aria-label="Profile">
+              <span>D.</span>
+            </button>
+            <button class="chevron-btn" type="button" aria-label="Open profile menu">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </button>
+
+            <div class="profile-menu">
+              <a href="#" class="profile-menu-item">Accessibility</a>
+              <div class="profile-menu-divider"></div>
+              <a href="#" class="profile-menu-item">Profile</a>
+              <a href="#" class="profile-menu-item">Grades</a>
+              <a href="#" class="profile-menu-item">Calendar</a>
+              <a href="#" class="profile-menu-item">Private files</a>
+              <a href="#" class="profile-menu-item">Reports</a>
+              <div class="profile-menu-divider"></div>
+              <a href="#" class="profile-menu-item">Preferences</a>
+              <div class="profile-menu-divider"></div>
+              <a href="#" class="profile-menu-item">Log out</a>
+            </div>
+          </div>
           <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false"
             aria-controls="primary-navigation">
             <span></span>
@@ -110,7 +125,8 @@
           <div class="content-header">
             <div class="content-header__text">
               <h2 class="content-title">Your <span id="platform-title">Coursera</span> Courses</h2>
-              <p class="content-subtitle">View, manage, and continue your <span id="platform-subtitle">Coursera</span> learning in one place.</p>
+              <p class="content-subtitle">View, manage, and continue your <span id="platform-subtitle">Coursera</span>
+                learning in one place.</p>
             </div>
             <div class="content-header__actions">
               <div class="search-field">
@@ -144,11 +160,13 @@
                 <div class="illustration-dots"></div>
               </div>
               <h3 class="empty-title">No <span id="empty-platform">Coursera</span> courses found</h3>
-              <p class="empty-desc">We couldn't find any <span id="empty-platform-desc">Coursera</span> courses linked to your account. Make sure your account is connected or try again later.</p>
+              <p class="empty-desc">We couldn't find any <span id="empty-platform-desc">Coursera</span> courses linked
+                to your account. Make sure your account is connected or try again later.</p>
               <button class="refresh-btn">
                 Refresh
                 <svg viewBox="0 0 24 24">
-                  <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                  <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15">
+                  </path>
                 </svg>
               </button>
             </div>
@@ -164,7 +182,8 @@
               </div>
               <div class="banner-text">
                 <strong>Not seeing your courses?</strong>
-                <p>Make sure your <span id="banner-platform">Coursera</span> account is connected to view your learning here.</p>
+                <p>Make sure your <span id="banner-platform">Coursera</span> account is connected to view your learning
+                  here.</p>
               </div>
             </div>
             <button class="banner-btn">Check connection</button>
@@ -254,9 +273,52 @@
     </div>
   </footer>
 
+  <div class="course-modal-overlay" id="modalOverlay">
+    <div class="course-modal">
+      <button class="modal-close" id="closeModal">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" />
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <img class="modal-image" id="modalImage" src="" alt="" />
+        <div class="modal-title-area">
+          <span class="modal-tag" id="modalPlatform">Coursera</span>
+          <h2 id="modalTitle">Course Title</h2>
+          <div class="discover-card__meta">
+            <span id="modalCategory">Category</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-grid">
+        <div class="modal-info-item">
+          <span>Duration</span>
+          <strong id="modalDuration">8 Weeks</strong>
+        </div>
+        <div class="modal-info-item">
+          <span>Timeline</span>
+          <strong id="modalTimeline">Self-paced</strong>
+        </div>
+        <div class="modal-info-item">
+          <span>Charges</span>
+          <strong id="modalCharges">Free</strong>
+        </div>
+      </div>
+
+      <div class="modal-description">
+        <p id="modalDescription">Detailed course description goes here...</p>
+      </div>
+
+      <div class="modal-actions">
+        <button class="modal-btn modal-btn--secondary" id="secondaryAction">Preview Course</button>
+        <button class="modal-btn modal-btn--primary" id="primaryAction">Enroll Now</button>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // Enhanced tab switching logic
-    const tabs = document.querySelectorAll('.moocs-tab');
     const platformLabels = {
       'coursera': 'Coursera',
       'linkedin': 'LinkedIn Learning',
@@ -264,36 +326,402 @@
       'unacademy': 'Unacademy'
     };
 
+    const platformData = {
+      'coursera': [
+        {
+          title: 'Google Data Analytics Professional Certificate',
+          category: 'Data Science',
+          progress: '80%',
+          lessons: '24 Lessons',
+          rating: '4.8',
+          duration: '6 Months',
+          timeline: 'Flexible Schedule',
+          charges: '$49/Month',
+          description: 'Get professional training from Google and learn the foundational skills of data analytics. You will learn to clean, visualize and analyze data with tools like SQL, R, and Tableau.',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'IBM Data Science Professional Certificate',
+          category: 'Data Science',
+          progress: '45%',
+          lessons: '18 Lessons',
+          rating: '4.7',
+          duration: '10 Months',
+          timeline: 'Self-paced',
+          charges: '$39/Month',
+          description: 'Prepare for a career in data science. Learn open source tools, libraries, Python, databases, SQL, data visualization, and data analysis.',
+          image: 'https://images.unsplash.com/photo-1527474305487-b87b222841cc?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'Machine Learning Specialization',
+          category: 'AI & ML',
+          progress: '0%',
+          lessons: '32 Lessons',
+          rating: '4.9',
+          duration: '3 Months',
+          timeline: 'Flexible',
+          charges: 'Free to Audit',
+          description: 'A foundational online program created in collaboration between DeepLearning.AI and Stanford Online. This specialization will help you master the fundamentals of AI.',
+          image: 'https://images.unsplash.com/photo-1555255707-c07966488bc0?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'Financial Markets (Yale University)',
+          category: 'Finance',
+          progress: '0%',
+          lessons: '15 Lessons',
+          rating: '4.8',
+          duration: '7 Weeks',
+          timeline: 'Self-paced',
+          charges: '$49 (Certificate)',
+          description: 'An overview of the ideas, methods, and institutions that permit human society to manage risks and foster enterprise.',
+          image: 'https://images.unsplash.com/photo-1611974717482-48a0053d824d?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'Python for Everybody Specialization',
+          category: 'Programming',
+          progress: '10%',
+          lessons: '40 Lessons',
+          rating: '4.8',
+          duration: '4 Months',
+          timeline: 'Flexible',
+          charges: 'Free',
+          description: 'This Specialization builds on the success of the Python for Everybody course and will introduce fundamental programming concepts including data structures.',
+          image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80'
+        }
+      ],
+      'linkedin': [
+        {
+          title: 'Project Management Foundations',
+          category: 'Business',
+          progress: '100%',
+          lessons: '12 Lessons',
+          rating: '4.9',
+          duration: '3 Weeks',
+          timeline: 'Video on demand',
+          charges: 'Premium Required',
+          description: 'Learn the fundamentals of project management, from project initiation to closing. Master key methodologies and best practices.',
+          image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'Artificial Intelligence Foundations',
+          category: 'Technology',
+          progress: '0%',
+          lessons: '8 Lessons',
+          rating: '4.7',
+          duration: '4 Hours',
+          timeline: 'Video',
+          charges: 'Premium',
+          description: 'Understand the basic concepts, terminologies, and real-world applications of Artificial Intelligence and Machine Learning.',
+          image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'Leading with Emotional Intelligence',
+          category: 'Soft Skills',
+          progress: '0%',
+          lessons: '10 Lessons',
+          rating: '4.9',
+          duration: '2 Hours',
+          timeline: 'On-demand',
+          charges: 'Premium',
+          description: 'Learn how to use emotional intelligence to lead more effectively, build stronger relationships, and manage stress in the workplace.',
+          image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'Data Science Foundations: Fundamentals',
+          category: 'Data Science',
+          progress: '0%',
+          lessons: '15 Lessons',
+          rating: '4.8',
+          duration: '5 Hours',
+          timeline: 'Video Course',
+          charges: 'Premium',
+          description: 'Get an overview of what data science is and how to apply it in your organization to make better data-driven decisions.',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'Excel Essential Training (365)',
+          category: 'Productivity',
+          progress: '0%',
+          lessons: '22 Lessons',
+          rating: '4.9',
+          duration: '3 Hours',
+          timeline: 'Video',
+          charges: 'Premium',
+          description: 'Master the most essential features of Microsoft Excel, from basic calculations to complex pivot tables and data analysis.',
+          image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80'
+        }
+      ],
+      'udemy': [
+        {
+          title: 'The Complete 2024 Web Development Bootcamp',
+          category: 'Development',
+          progress: '60%',
+          lessons: '48 Lessons',
+          rating: '4.9',
+          duration: '12 Weeks',
+          timeline: 'Full Lifetime Access',
+          charges: '₹499 (Limited Offer)',
+          description: 'Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, PostgreSQL and more!',
+          image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'AWS Certified Solutions Architect',
+          category: 'Cloud',
+          progress: '0%',
+          lessons: '35 Lessons',
+          rating: '4.9',
+          duration: '25 Hours',
+          timeline: 'Lifetime Access',
+          charges: '₹449',
+          description: 'Pass the AWS Certified Solutions Architect Associate Certification. Full coverage of all topics on the exam.',
+          image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'Digital Marketing Strategy Course',
+          category: 'Marketing',
+          progress: '0%',
+          lessons: '20 Lessons',
+          rating: '4.7',
+          duration: '15 Hours',
+          timeline: 'On-demand',
+          charges: '₹599',
+          description: 'Master Digital Marketing Strategy, Social Media Marketing, SEO, YouTube, Email, Facebook Marketing, and more.',
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'The Complete SQL Bootcamp',
+          category: 'Data',
+          progress: '0%',
+          lessons: '9 Lessons',
+          rating: '4.9',
+          duration: '9 Hours',
+          timeline: 'Lifetime Access',
+          charges: '₹449',
+          description: 'Learn SQL for Data Analysis with PostgreSQL. Real-world tasks and quizzes included to make you an expert.',
+          image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'Java Programming Masterclass',
+          category: 'Development',
+          progress: '0%',
+          lessons: '80 Lessons',
+          rating: '4.9',
+          duration: '80 Hours',
+          timeline: 'Lifetime Access',
+          charges: '₹599',
+          description: 'Learn Java, Android and much more. This is the only course you need to master Java Programming.',
+          image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80'
+        }
+      ],
+      'unacademy': [
+        {
+          title: 'UPSC CSE - GS: Comprehensive Course',
+          category: 'Exam Prep',
+          progress: '0%',
+          lessons: '150+ Lessons',
+          rating: '4.8',
+          duration: '12 Months',
+          timeline: 'Daily Live Classes',
+          charges: '₹2,500/Month',
+          description: 'Prepare for UPSC Civil Services Examination with India\'s top educators. Get comprehensive coverage of GS papers, current affairs, and mock tests.',
+          image: 'https://images.unsplash.com/photo-1513258496099-48168024adb0?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'IIT JEE: Advanced Physics',
+          category: 'Engineering',
+          progress: '0%',
+          lessons: '45 Lessons',
+          rating: '4.9',
+          duration: '4 Months',
+          timeline: 'Scheduled',
+          charges: '₹1,200/Month',
+          description: 'Master Physics for IIT JEE Advanced. This course covers mechanics, thermodynamics, and electromagnetism with deep conceptual clarity.',
+          image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'NEET UG: Target 2025',
+          category: 'Medical',
+          progress: '0%',
+          lessons: '200+ Lessons',
+          rating: '4.8',
+          duration: '24 Months',
+          timeline: 'Live Classes',
+          charges: '₹3,500/Month',
+          description: 'Comprehensive preparation for NEET UG 2025. Covers Biology, Physics, and Chemistry with expert guidance.',
+          image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'Bank Exams: Quant for Prelims',
+          category: 'Banking',
+          progress: '0%',
+          lessons: '60 Lessons',
+          rating: '4.7',
+          duration: '2 Months',
+          timeline: 'Live Sessions',
+          charges: '₹900/Month',
+          description: 'Master Quantitative Aptitude for SBI and IBPS Clerk/PO Prelims with short tricks and conceptual depth.',
+          image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80'
+        },
+        {
+          title: 'CA Foundation: Principles of Accounting',
+          category: 'Commerce',
+          progress: '0%',
+          lessons: '80 Lessons',
+          rating: '4.9',
+          duration: '6 Months',
+          timeline: 'Scheduled',
+          charges: '₹1,500/Month',
+          description: 'Kickstart your CA journey with a solid foundation in accounting principles and practices taught by industry veterans.',
+          image: 'https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&w=800&q=80',
+          avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80'
+        }
+      ]
+    };
+
     const docLogos = {
       'coursera': 'C',
       'linkedin': 'in',
       'udemy': 'U',
-      'unacademy': 'U'
+      'unacademy': 'UA'
     };
+
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    function openModal(course, platform) {
+      document.getElementById('modalTitle').textContent = course.title;
+      document.getElementById('modalImage').src = course.image;
+      document.getElementById('modalPlatform').textContent = platformLabels[platform];
+      document.getElementById('modalCategory').textContent = course.category;
+      document.getElementById('modalDuration').textContent = course.duration || 'Flexible';
+      document.getElementById('modalTimeline').textContent = course.timeline || 'On-demand';
+      document.getElementById('modalCharges').textContent = course.charges || 'Included';
+      document.getElementById('modalDescription').textContent = course.description || 'Learn this high-demand skill with industry experts.';
+      
+      modalOverlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    function createCourseCard(course) {
+      return `
+        <article class="discover-card animate-fade-up" tabindex="0" role="button">
+          <img class="discover-card__image" src="${course.image}" alt="${course.title}" />
+          <div class="discover-card__body">
+            <div class="discover-card__meta">
+              <span>${course.category}</span>
+              <span class="discover-card__badge">${course.progress}</span>
+            </div>
+            <h3>${course.title}</h3>
+          </div>
+          <div class="discover-card__footer">
+            <div class="discover-card__stats">
+              <span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v14H6.5A2.5 2.5 0 0 0 4 20.5z"></path><path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v14h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path></svg>
+                ${course.lessons}
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.68 6.27.91-4.54 4.43 1.07 6.25L12 17.27 6.4 20.27l1.07-6.25L2.93 9.6l6.27-.91Z"></path></svg>
+                ${course.rating} rating
+              </span>
+            </div>
+            <img class="discover-card__avatar" src="${course.avatar}" alt="Course mentor" />
+          </div>
+        </article>
+      `;
+    }
+
+    const tabs = document.querySelectorAll('.moocs-tab');
+
+    function updateContent(platform) {
+      const label = platformLabels[platform];
+      const courses = platformData[platform] || [];
+      const mainContent = document.querySelector('.moocs-main-content');
+
+      const platformTitle = document.getElementById('platform-title');
+      const platformSubtitle = document.getElementById('platform-subtitle');
+      if (platformTitle) platformTitle.textContent = label;
+      if (platformSubtitle) platformSubtitle.textContent = label;
+
+      const docLogo = document.querySelector('.doc-logo');
+      if (docLogo) {
+        docLogo.textContent = docLogos[platform] || 'L';
+      }
+
+      if (courses.length > 0) {
+        const gridHtml = `<div class="discover-grid">${courses.map(course => createCourseCard(course)).join('')}</div>`;
+        mainContent.innerHTML = gridHtml;
+
+        const newCards = mainContent.querySelectorAll('.discover-card');
+        newCards.forEach((card, index) => {
+          card.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openModal(courses[index], platform);
+          });
+        });
+      } else {
+        mainContent.innerHTML = `
+          <div class="empty-state animate-fade-up">
+            <div class="empty-illustration">
+              <div class="illustration-box">
+                <div class="illustration-doc">
+                  <span class="doc-logo">${docLogos[platform] || 'L'}</span>
+                </div>
+                <div class="illustration-alert">!</div>
+              </div>
+              <div class="illustration-dots"></div>
+            </div>
+            <h3 class="empty-title">No ${label} courses found</h3>
+            <p class="empty-desc">We couldn't find any ${label} courses linked to your account. Make sure your account is connected or try again later.</p>
+            <button class="refresh-btn" onclick="location.reload()">
+              <span>Refresh</span>
+              <svg viewBox="0 0 24 24">
+                <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+            </button>
+          </div>
+        `;
+      }
+    }
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const platform = tab.dataset.platform;
-        const label = platformLabels[platform];
-
-        // Update active state
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-
-        // Update all platform name placeholders
-        document.getElementById('platform-title').textContent = label;
-        document.getElementById('platform-subtitle').textContent = label;
-        document.getElementById('empty-platform').textContent = label;
-        document.getElementById('empty-platform-desc').textContent = label;
-        document.getElementById('banner-platform').textContent = label;
-
-        // Update illustration logo if applicable
-        const docLogo = document.querySelector('.doc-logo');
-        if (docLogo) {
-          docLogo.textContent = docLogos[platform] || 'L';
-        }
+        updateContent(platform);
       });
     });
+
+    updateContent('coursera');
   </script>
   <script src="index.js"></script>
 </body>

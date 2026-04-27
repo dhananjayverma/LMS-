@@ -25,8 +25,7 @@
             <a class="nav-link" href="#dashboard">Dashboard</a>
             <a class="nav-link" href="#courses">My Courses</a>
             <a class="nav-link" href="moocs.html">MOOCs Courses</a>
-            <a class="nav-link" href="#calendar">Calendar</a>
-            <a class="nav-link" href="#resources">Resources</a>
+
           </nav>
 
           <div class="navbar__actions">
@@ -43,14 +42,30 @@
               </svg>
               <span class="notification-badge">3</span>
             </button>
-            <button class="profile-btn" type="button" aria-label="Profile">
-              <span>D.</span>
-            </button>
-            <button class="chevron-btn" type="button" aria-label="Open profile menu">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 9l6 6 6-6"></path>
-              </svg>
-            </button>
+            <div class="profile-dropdown" id="profileDropdown">
+              <button class="profile-btn" type="button" aria-label="Profile">
+                <span>D.</span>
+              </button>
+              <button class="chevron-btn" type="button" aria-label="Open profile menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
+
+              <div class="profile-menu">
+                <a href="#" class="profile-menu-item">Accessibility</a>
+                <div class="profile-menu-divider"></div>
+                <a href="#" class="profile-menu-item">Profile</a>
+                <a href="#" class="profile-menu-item">Grades</a>
+                <a href="#" class="profile-menu-item">Calendar</a>
+                <a href="#" class="profile-menu-item">Private files</a>
+                <a href="#" class="profile-menu-item">Reports</a>
+                <div class="profile-menu-divider"></div>
+                <a href="#" class="profile-menu-item">Preferences</a>
+                <div class="profile-menu-divider"></div>
+                <a href="#" class="profile-menu-item">Log out</a>
+              </div>
+            </div>
             <button
               class="menu-btn"
               type="button"
@@ -222,7 +237,7 @@
               <div class="announcement-card__content">
                 <strong>Important Announcement</strong>
                 <p>Mid-term examinations will start from 20th May 2024.</p>
-                <a href="#resources">View All</a>
+
               </div>
               <span class="announcement-card__arrow" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -679,7 +694,7 @@
 
             <div class="benefits-actions">
               <a class="benefits-btn benefits-btn--dark" href="#courses">Join Course</a>
-              <a class="benefits-btn benefits-btn--brand" href="#resources">Learn More</a>
+
             </div>
           </div>
 
@@ -734,8 +749,7 @@
 
         <section class="page-anchor" id="dashboard" aria-hidden="true"></section>
         <section class="page-anchor" id="moocs" aria-hidden="true"></section>
-        <section class="page-anchor" id="calendar" aria-hidden="true"></section>
-        <section class="page-anchor" id="resources" aria-hidden="true"></section>
+
       </main>
     </div>
 

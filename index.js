@@ -74,3 +74,32 @@ courseCards.forEach((card) => {
     }
   });
 });
+
+// Profile Dropdown Logic
+const profileDropdown = document.getElementById("profileDropdown");
+if (profileDropdown) {
+  const profileBtn = profileDropdown.querySelector(".profile-btn");
+  const chevronBtn = profileDropdown.querySelector(".chevron-btn");
+
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    profileDropdown.classList.toggle("is-active");
+  };
+
+  profileBtn.addEventListener("click", toggleDropdown);
+  chevronBtn.addEventListener("click", toggleDropdown);
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!profileDropdown.contains(e.target)) {
+      profileDropdown.classList.remove("is-active");
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      profileDropdown.classList.remove("is-active");
+    }
+  });
+}
