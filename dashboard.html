@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | LMS Portal</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header class="site-header shell">
+    <div class="navbar">
+      <a class="brand" href="index.html" aria-label="Chandigarh University">
+        <img class="brand__logo" src="log1.png" alt="Chandigarh University logo" />
+      </a>
+
+      <nav class="navbar__links" id="primary-navigation" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="dashboard.html">Dashboard</a>
+        <a class="nav-link" href="index.html#courses">My Courses</a>
+        <a class="nav-link" href="moocs.html">MOOCs Courses</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <button class="circle-btn" type="button" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="M16 16l5 5"></path>
+          </svg>
+        </button>
+        <button class="circle-btn notification-btn" type="button" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 17H4.5a1 1 0 0 1-.76-1.65l1.26-1.48V9a7 7 0 1 1 14 0v4.87l1.26 1.48A1 1 0 0 1 19.5 17H18">
+            </path>
+            <path d="M9 19a3 3 0 0 0 6 0"></path>
+          </svg>
+          <span class="notification-badge">3</span>
+        </button>
+
+        <div class="profile-dropdown" id="profileDropdown">
+          <button class="profile-btn" type="button" aria-label="Profile">
+            <span>D.</span>
+          </button>
+          <button class="chevron-btn" type="button" aria-label="Open profile menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </button>
+
+          <div class="profile-menu">
+            <a href="#" class="profile-menu-item">Accessibility</a>
+            <div class="profile-menu-divider"></div>
+            <a href="#" class="profile-menu-item">Profile</a>
+            <a href="#" class="profile-menu-item">Grades</a>
+            <a href="#" class="profile-menu-item">Calendar</a>
+            <div class="profile-menu-divider"></div>
+            <a href="#" class="profile-menu-item logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-container shell">
+    <div class="dashboard-grid">
+      <!-- Welcome Hero -->
+      <section class="dash-hero animate-fade-up">
+        <div class="dash-hero__pattern"></div>
+        <div class="dash-hero__content">
+          <span class="dash-hero__eyebrow">Welcome back, Dhananjay! 👋</span>
+          <h1 class="dash-hero__title">Your Learning <br />Journey <span>Continues</span></h1>
+          <p class="dash-hero__desc">Track your progress, stay on top of assignments, and achieve your learning goals.
+          </p>
+          <a href="#my-courses" class="btn"
+            style="background: #c30000; color: #fff; padding: 14px 28px; border-radius: 12px; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;">Explore
+            My Courses <span style="font-size: 18px;">→</span></a>
+        </div>
+        <div class="dash-hero__image-container">
+          <img src="images/hero.png" alt="Learning Journey" class="dash-hero__image" />
+        </div>
+      </section>
+
+      <!-- Side Quick Stats -->
+      <aside class="dash-side-stats animate-fade-up" style="animation-delay: 0.1s;">
+        <div class="side-stat-card">
+          <div class="s-icon" style="background: #fce4ec; color: #f06292;">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="none">
+              <path d="M6 3a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6Zm1.5 5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5ZM7.5 11h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5ZM7.5 14h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5ZM13.5 8h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5ZM13.5 11h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5ZM13.5 14h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5Z" />
+            </svg>
+          </div>
+          <div class="s-info">
+            <strong>8</strong>
+            <span>Active Courses</span>
+          </div>
+        </div>
+        <div class="side-stat-card">
+          <div class="s-icon" style="background: #fff8e1; color: #ffca28;">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="none">
+              <path fill-rule="evenodd" d="M12.96 3.852a.75.75 0 0 0-1.92 0 7.5 7.5 0 1 1 1.92 0ZM9 14.25a3 3 0 1 1 6 0 3 3 0 0 1-6 0Z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="s-info">
+            <strong>1 Days</strong>
+            <span>Learning Streak</span>
+          </div>
+        </div>
+        <div class="side-stat-card">
+          <div class="s-icon" style="background: #e3f2fd; color: #42a5f5;">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="none">
+              <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="s-info">
+            <strong>0/8</strong>
+            <span>Assignments Submitted</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Quick Stats Row -->
+      <div class="quick-stats-row animate-fade-up" style="animation-delay: 0.2s;">
+        <div class="q-stat-card">
+          <div class="q-header">
+            <div class="s-icon" style="background: #73ba7d; color: #fff;">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M6 3a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6Zm1.5 5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5ZM7.5 11h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5ZM7.5 14h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5ZM13.5 8h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5ZM13.5 11h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5ZM13.5 14h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5Z" />
+              </svg>
+            </div>
+            <div class="q-body">
+              <strong>8</strong>
+              <span>Active Courses</span>
+            </div>
+          </div>
+          <div class="q-footer">
+            <a href="#" style="color: #73ba7d;">View all courses <span style="font-size: 14px;">→</span></a>
+          </div>
+        </div>
+        <div class="q-stat-card">
+          <div class="q-header">
+            <div class="s-icon" style="background: #f06292; color: #fff;">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12.5 3a.75.75 0 0 1 .75.75v16.5a.75.75 0 0 1-1.5 0V3.75a.75.75 0 0 1 .75-.75Zm-4.5 6a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-1.5 0V9.75A.75.75 0 0 1 8 9Zm9 5.25a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0v-5.25a.75.75 0 0 1 .75-.75Z" />
+              </svg>
+            </div>
+            <div class="q-body">
+              <strong>0%</strong>
+              <span>Course Progress</span>
+            </div>
+          </div>
+          <div class="q-footer">
+            <a href="#" style="color: #f06292;">View progress <span style="font-size: 14px;">→</span></a>
+          </div>
+        </div>
+        <div class="q-stat-card">
+          <div class="q-header">
+            <div class="s-icon" style="background: #ffca28; color: #fff;">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M12.96 3.852a.75.75 0 0 0-1.92 0 7.5 7.5 0 1 1 1.92 0ZM9 14.25a3 3 0 1 1 6 0 3 3 0 0 1-6 0Z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="q-body">
+              <strong>1 Days</strong>
+              <span>Learning Streak</span>
+            </div>
+          </div>
+          <div class="q-footer" style="text-align: center;">
+            <span style="font-size: 11px; font-weight: 700; color: #1a1d23;">Keep it up! 🔥</span>
+          </div>
+        </div>
+        <div class="q-stat-card">
+          <div class="q-header">
+            <div class="s-icon" style="background: #42a5f5; color: #fff;">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="q-body">
+              <strong>0/8</strong>
+              <span>Assignments Submitted</span>
+            </div>
+          </div>
+          <div class="q-footer">
+            <a href="#" style="color: #42a5f5;">View assignments <span style="font-size: 14px;">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learning Analytics Overview Section -->
+      <div class="analytics-header animate-fade-up" style="animation-delay: 0.3s; grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; margin-top: 10px;">
+        <h2 class="dash-section-title" style="margin: 0;">Learning Analytics Overview</h2>
+        <div class="date-picker-mock">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>May 12 - May 18, 2026</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </div>
+
+      <div class="analytics-grid animate-fade-up" style="animation-delay: 0.4s; grid-column: 1 / -1;">
+        
+        <!-- Course Progress Card -->
+        <div class="dash-card analytics-card">
+          <div class="card-header" style="margin-bottom: 24px;">
+            <div>
+              <h3 class="card-title">Course Progress</h3>
+              <p style="margin: 4px 0 0; font-size: 13px; color: var(--muted);">Track your learning progress across courses</p>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <select class="analytics-select">
+                <option>This Semester</option>
+              </select>
+              <button class="more-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="none"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></button>
+            </div>
+          </div>
+          
+          <div class="custom-bar-chart-container">
+            <div class="chart-y-axis">
+              <span>100</span><span>75</span><span>50</span><span>25</span><span>0</span>
+              <div class="y-axis-label">Progress (%)</div>
+            </div>
+            <div class="custom-bar-chart">
+              <div class="avg-line" style="bottom: 60%;"><span>60%<br><small>Avg. Progress</small></span></div>
+              <div class="c-bar-group"><div class="c-bar-fill" style="height: 85%;"><span>85%</span></div><span class="c-bar-label">25CSH-103</span></div>
+              <div class="c-bar-group"><div class="c-bar-fill" style="height: 72%;"><span>72%</span></div><span class="c-bar-label">25SPH-141</span></div>
+              <div class="c-bar-group"><div class="c-bar-fill" style="height: 60%;"><span>60%</span></div><span class="c-bar-label">25MT-198</span></div>
+              <div class="c-bar-group"><div class="c-bar-fill" style="height: 45%;"><span>45%</span></div><span class="c-bar-label">25EC-101</span></div>
+              <div class="c-bar-group"><div class="c-bar-fill" style="height: 30%;"><span>30%</span></div><span class="c-bar-label">25CP-102</span></div>
+              <div class="c-bar-group"><div class="c-bar-fill" style="height: 18%;"><span>18%</span></div><span class="c-bar-label">25DT-152</span></div>
+              <div class="c-bar-group"><div class="c-bar-fill empty"><span>0%</span></div><span class="c-bar-label">25AI-102</span></div>
+              <div class="c-bar-group"><div class="c-bar-fill empty"><span>0%</span></div><span class="c-bar-label">25BIO-148</span></div>
+            </div>
+          </div>
+          
+          <div class="card-footer" style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center;">
+            <a href="#" style="color: var(--brand); font-size: 13px; font-weight: 800;">View detailed report <span style="font-size: 14px;">></span></a>
+            <span class="badge badge-danger"><span class="dot"></span> 4 Low Progress</span>
+          </div>
+        </div>
+
+        <!-- Content Distribution Card -->
+        <div class="dash-card analytics-card">
+          <div class="card-header" style="margin-bottom: 16px;">
+            <div>
+              <h3 class="card-title">Content Distribution</h3>
+              <p style="margin: 4px 0 0; font-size: 13px; color: var(--muted);">Understand your course materials breakdown</p>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <select class="analytics-select">
+                <option>All Courses</option>
+              </select>
+              <button class="more-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="none"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></button>
+            </div>
+          </div>
+          
+          <div class="chart-legend">
+            <span class="legend-item"><span class="l-dot" style="background: #7a4bbd;"></span> Videos</span>
+            <span class="legend-item"><span class="l-dot" style="background: #fb8c00;"></span> Presentations</span>
+            <span class="legend-item"><span class="l-dot" style="background: #2196f3;"></span> Quizzes</span>
+            <span class="legend-item"><span class="l-dot" style="background: #ef2326;"></span> Assignments</span>
+            <span class="legend-item"><span class="l-dot" style="background: #4caf50;"></span> PDFs</span>
+            <span class="legend-item"><span class="l-dot" style="background: #8d6e63;"></span> Pages</span>
+          </div>
+
+          <div class="custom-bar-chart-container" style="height: 180px;">
+            <div class="chart-y-axis">
+              <span>60</span><span>45</span><span>30</span><span>15</span><span>0</span>
+            </div>
+            <div class="custom-grouped-bar-chart">
+              <div class="g-bar-group">
+                <div class="g-bars"><div class="g-bar" style="height: 42%; background: #7a4bbd;"></div><div class="g-bar" style="height: 10%; background: #2196f3;"></div><div class="g-bar" style="height: 15%; background: #ef2326;"></div><div class="g-bar" style="height: 5%; background: #8d6e63;"></div></div>
+                <span class="c-bar-label">25CSH-103</span>
+              </div>
+              <div class="g-bar-group">
+                <div class="g-bars"><div class="g-bar" style="height: 50%; background: #7a4bbd;"></div><div class="g-bar" style="height: 25%; background: #fb8c00;"></div><div class="g-bar" style="height: 90%; background: #ef2326;"></div><div class="g-bar" style="height: 30%; background: #4caf50;"></div></div>
+                <span class="c-bar-label">25SPH-141</span>
+              </div>
+              <div class="g-bar-group">
+                <div class="g-bars"><div class="g-bar" style="height: 35%; background: #7a4bbd;"></div><div class="g-bar" style="height: 20%; background: #fb8c00;"></div><div class="g-bar" style="height: 18%; background: #8d6e63;"></div></div>
+                <span class="c-bar-label">25MT-198</span>
+              </div>
+              <div class="g-bar-group">
+                <div class="g-bars"><div class="g-bar" style="height: 40%; background: #7a4bbd;"></div><div class="g-bar" style="height: 18%; background: #fb8c00;"></div><div class="g-bar" style="height: 10%; background: #ef2326;"></div></div>
+                <span class="c-bar-label">25DT-152</span>
+              </div>
+              <div class="g-bar-group">
+                <div class="g-bars"><div class="g-bar" style="height: 25%; background: #2196f3;"></div><div class="g-bar" style="height: 5%; background: #ef2326;"></div><div class="g-bar" style="height: 5%; background: #8d6e63;"></div></div>
+                <span class="c-bar-label">25EC-101</span>
+              </div>
+              <div class="g-bar-group">
+                <div class="g-bars"><div class="g-bar" style="height: 40%; background: #7a4bbd;"></div><div class="g-bar" style="height: 12%; background: #fb8c00;"></div><div class="g-bar" style="height: 15%; background: #4caf50;"></div></div>
+                <span class="c-bar-label">25CP-102</span>
+              </div>
+              <div class="g-bar-group">
+                <div class="g-bars"><div class="g-bar" style="height: 50%; background: #7a4bbd;"></div><div class="g-bar" style="height: 25%; background: #fb8c00;"></div><div class="g-bar" style="height: 10%; background: #ef2326;"></div><div class="g-bar" style="height: 8%; background: #8d6e63;"></div></div>
+                <span class="c-bar-label">25AI-102</span>
+              </div>
+              <div class="g-bar-group">
+                <div class="g-bars"><div class="g-bar" style="height: 15%; background: #7a4bbd;"></div><div class="g-bar" style="height: 35%; background: #fb8c00;"></div><div class="g-bar" style="height: 35%; background: #ef2326;"></div><div class="g-bar" style="height: 25%; background: #4caf50;"></div></div>
+                <span class="c-bar-label">25BIO-148</span>
+              </div>
+              <div class="g-bar-group">
+                <div class="g-bars"><div class="g-bar" style="height: 30%; background: #ef2326;"></div><div class="g-bar" style="height: 12%; background: #4caf50;"></div><div class="g-bar" style="height: 20%; background: #8d6e63;"></div></div>
+                <span class="c-bar-label">25MEP-102</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-footer" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line);">
+            <a href="#" style="color: var(--brand); font-size: 13px; font-weight: 800;">View detailed report <span style="font-size: 14px;">></span></a>
+          </div>
+        </div>
+
+        <!-- Time Allocation & Insights Card -->
+        <div class="dash-card analytics-card full-width flex-row">
+          <div class="time-allocation-section">
+            <h3 class="card-title">Time Allocation (This Week)</h3>
+            <p style="margin: 4px 0 24px; font-size: 13px; color: var(--muted);">See how your time is distributed across courses</p>
+            
+            <div class="donut-chart-layout">
+              <div class="donut-container">
+                <div class="donut-chart">
+                  <div class="donut-inner">
+                    <strong style="font-size: 22px; font-weight: 800; color: var(--text);">12h 30m</strong>
+                    <span style="font-size: 11px; color: var(--muted); font-weight: 600;">Total Study Time</span>
+                  </div>
+                </div>
+              </div>
+              <div class="donut-legend-list">
+                <div class="d-legend-item"><span class="d-dot" style="background: #5c9ce6;"></span> <span class="d-label">Data Structures (25CSH-103)</span> <span class="d-time">4h 30m (36%)</span></div>
+                <div class="d-legend-item"><span class="d-dot" style="background: #f472b6;"></span> <span class="d-label">Engineering Physics (25SPH-141)</span> <span class="d-time">3h 30m (28%)</span></div>
+                <div class="d-legend-item"><span class="d-dot" style="background: #fbbf24;"></span> <span class="d-label">Mathematics-II (25MT-198)</span> <span class="d-time">1h 45m (14%)</span></div>
+                <div class="d-legend-item"><span class="d-dot" style="background: #a78bfa;"></span> <span class="d-label">Digital Electronics (25EC-101)</span> <span class="d-time">1h 00m (8%)</span></div>
+                <div class="d-legend-item"><span class="d-dot" style="background: #34d399;"></span> <span class="d-label">Computer Lab (25CP-102)</span> <span class="d-time">45m (6%)</span></div>
+                <div class="d-legend-item"><span class="d-dot" style="background: #38bdf8;"></span> <span class="d-label">Aptitude (25DT-152)</span> <span class="d-time">30m (4%)</span></div>
+                <div class="d-legend-item"><span class="d-dot" style="background: #9ca3af;"></span> <span class="d-label">Others</span> <span class="d-time">30m (4%)</span></div>
+              </div>
+            </div>
+            
+            <div style="margin-top: 30px;">
+              <a href="#" class="btn btn-outline" style="font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 8px; border: 1px solid var(--line); color: var(--brand); display: inline-block;">View full time log <span style="font-size: 14px;">></span></a>
+            </div>
+          </div>
+          
+          <div class="insights-section">
+            <h4 class="insights-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#2196f3" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              <span style="color: #2196f3;">Insights</span>
+            </h4>
+            
+            <div class="insight-list">
+              <div class="insight-item">
+                <div class="insight-icon" style="background: rgba(99, 102, 241, 0.08); color: #6366f1;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                </div>
+                <div class="insight-info">
+                  <strong>Most Time Spent</strong>
+                  <span>Data Structures (25CSH-103)</span>
+                </div>
+                <div class="insight-value">4h 30m</div>
+              </div>
+              
+              <div class="insight-item">
+                <div class="insight-icon" style="background: rgba(59, 130, 246, 0.08); color: #3b82f6;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="insight-info">
+                  <strong>Least Time Spent</strong>
+                  <span>Aptitude (25DT-152)</span>
+                </div>
+                <div class="insight-value">30m</div>
+              </div>
+              
+              <div class="insight-item" style="border: none; padding-bottom: 0;">
+                <div class="insight-icon" style="background: rgba(219, 39, 119, 0.08); color: #db2777;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                </div>
+                <div class="insight-info" style="flex: 1;">
+                  <strong>Weekly Goal Progress</strong>
+                  <span>Goal: 18h 00m</span>
+                </div>
+                <div class="insight-value">12h 30m (70%)</div>
+              </div>
+              
+              <div style="margin-top: -8px;">
+                <div class="goal-progress-bar">
+                  <div class="g-progress-fill" style="width: 70%;"></div>
+                </div>
+                <div style="text-align: right; margin-top: 8px; font-size: 11px; font-weight: 800; color: var(--text);">70%</div>
+              </div>
+            </div>
+            
+            <div style="margin-top: auto; text-align: right;">
+              <a href="#" class="btn btn-outline" style="font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 8px; border: 1px solid var(--line); color: var(--brand); display: inline-block;">Set weekly goal <span style="font-size: 14px;">></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary Grid -->
+      <div class="dash-card prog-card animate-fade-up" style="animation-delay: 0.7s;">
+        <div class="card-header">
+          <h3 class="card-title">Course Progress</h3>
+          <a href="#" class="view-all-link">View all</a>
+        </div>
+        <div class="course-progress-list">
+          <div class="cp-item">
+            <div class="cp-info">
+              <span class="cp-name">1. Design Thinking and Innovation (2SCSP-102)</span>
+              <span class="cp-percentage">85%</span>
+            </div>
+            <div class="cp-bar-container">
+              <div class="cp-bar" style="width: 85%; background: #4caf50;"></div>
+            </div>
+          </div>
+          <div class="cp-item">
+            <div class="cp-info">
+              <span class="cp-name">2. Computer Graphics Lab (2SMEP-102)</span>
+              <span class="cp-percentage">72%</span>
+            </div>
+            <div class="cp-bar-container">
+              <div class="cp-bar" style="width: 72%; background: #4caf50;"></div>
+            </div>
+          </div>
+          <div class="cp-item">
+            <div class="cp-info">
+              <span class="cp-name">3. AI Applications Lab (2SECP-102)</span>
+              <span class="cp-percentage">60%</span>
+            </div>
+            <div class="cp-bar-container">
+              <div class="cp-bar" style="width: 60%; background: #fbbf24;"></div>
+            </div>
+          </div>
+          <div class="cp-item">
+            <div class="cp-info">
+              <span class="cp-name">4. Emerging & Disruptive Technologies (2SECP-103)</span>
+              <span class="cp-percentage">45%</span>
+            </div>
+            <div class="cp-bar-container">
+              <div class="cp-bar" style="width: 45%; background: rgba(30, 35, 62, 0.08);"></div>
+            </div>
+          </div>
+          <div class="cp-item">
+            <div class="cp-info">
+              <span class="cp-name">5. Engineering Physics (2SSPH-141)</span>
+              <span class="cp-percentage">30%</span>
+            </div>
+            <div class="cp-bar-container">
+              <div class="cp-bar" style="width: 30%; background: #ef2326;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer" style="margin-top: auto; padding-top: 16px;">
+          <a href="#" style="color: var(--brand); font-size: 13px; font-weight: 800;">View all courses <span style="font-size: 14px;">→</span></a>
+        </div>
+      </div>
+
+      <div class="dash-card assign-card animate-fade-up" style="animation-delay: 0.8s;">
+        <div class="card-header">
+          <h3 class="card-title">Assignments</h3>
+          <a href="#" class="view-all-link">View all</a>
+        </div>
+        <div class="assignment-list">
+          <div class="assign-item">
+            <div class="assign-icon-box" style="background: rgba(239, 35, 38, 0.08); color: var(--brand);">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div class="assign-info">
+              <strong class="assign-name">Assignment 2</strong>
+              <span class="assign-course">Mathematics-II (2SMT-198)</span>
+            </div>
+            <div class="assign-status" style="color: #f97316;">Due Tomorrow</div>
+          </div>
+          <div class="assign-item">
+            <div class="assign-icon-box" style="background: rgba(239, 35, 38, 0.08); color: var(--brand);">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div class="assign-info">
+              <strong class="assign-name">Assignment 1</strong>
+              <span class="assign-course">Mathematics-II (2SMT-198)</span>
+            </div>
+            <div class="assign-status">Due May 20</div>
+          </div>
+          <div class="assign-item">
+            <div class="assign-icon-box" style="background: rgba(239, 35, 38, 0.08); color: var(--brand);">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div class="assign-info">
+              <strong class="assign-name">Assignment 3</strong>
+              <span class="assign-course">Digital Electronics (2SEC-101)</span>
+            </div>
+            <div class="assign-status">Due May 22</div>
+          </div>
+          <div class="assign-item">
+            <div class="assign-icon-box" style="background: rgba(76, 175, 80, 0.08); color: #4caf50;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div class="assign-info">
+              <strong class="assign-name">Lab Report 1</strong>
+              <span class="assign-course">AI Applications Lab (2SECP-102)</span>
+            </div>
+            <div class="assign-status" style="color: #4caf50; display: flex; align-items: center; gap: 4px;">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Completed
+            </div>
+          </div>
+        </div>
+        <div class="card-footer" style="margin-top: auto; padding-top: 16px;">
+          <a href="#" style="color: var(--brand); font-size: 13px; font-weight: 800;">View all assignments <span style="font-size: 14px;">→</span></a>
+        </div>
+      </div>
+
+      <div class="dash-card calendar-card animate-fade-up" style="animation-delay: 0.9s; padding: 0;">
+        <div class="calendar-top-bar" style="background: #00796b; padding: 12px 20px; border-radius: 24px 24px 0 0;">
+          <span class="calendar-top-title" style="color: #fff; font-weight: 800; font-size: 15px;">Calendar</span>
+        </div>
+        <div class="calendar-content" style="padding: 16px 20px;">
+          <select class="analytics-select" style="width: 100%; margin-bottom: 20px;">
+            <option>All courses</option>
+          </select>
+          
+          <div class="calendar-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <a href="#" class="cal-nav-btn" style="color: #0288d1; font-weight: 700; font-size: 13px;">&lt; May</a>
+            <span class="cal-current-month" style="font-weight: 800; font-size: 14px;">May 2026</span>
+            <a href="#" class="cal-nav-btn" style="color: #0288d1; font-weight: 700; font-size: 13px;">Jun &gt;</a>
+          </div>
+
+          <div class="cal-widget-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center;">
+            <span class="cal-w-day" style="font-size: 11px; font-weight: 700; color: var(--muted); padding-bottom: 8px;">Mon</span><span class="cal-w-day" style="font-size: 11px; font-weight: 700; color: var(--muted); padding-bottom: 8px;">Tue</span><span class="cal-w-day" style="font-size: 11px; font-weight: 700; color: var(--muted); padding-bottom: 8px;">Wed</span><span class="cal-w-day" style="font-size: 11px; font-weight: 700; color: var(--muted); padding-bottom: 8px;">Thu</span><span class="cal-w-day" style="font-size: 11px; font-weight: 700; color: var(--muted); padding-bottom: 8px;">Fri</span><span class="cal-w-day" style="font-size: 11px; font-weight: 700; color: var(--muted); padding-bottom: 8px;">Sat</span><span class="cal-w-day" style="font-size: 11px; font-weight: 700; color: var(--muted); padding-bottom: 8px;">Sun</span>
+            
+            <span class="cal-w-date muted" style="font-size: 12px; font-weight: 600; color: #cbd5e1; padding: 8px 0;">27</span><span class="cal-w-date muted" style="font-size: 12px; font-weight: 600; color: #cbd5e1; padding: 8px 0;">28</span><span class="cal-w-date muted" style="font-size: 12px; font-weight: 600; color: #cbd5e1; padding: 8px 0;">29</span><span class="cal-w-date muted" style="font-size: 12px; font-weight: 600; color: #cbd5e1; padding: 8px 0;">30</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">1</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">2</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">3</span>
+            <span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">4</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">5</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">6</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">7</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">8</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">9</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">10</span>
+            <span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">11</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">12</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">13</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">14</span><span class="cal-w-date active" style="font-size: 12px; font-weight: 800; background: #c30000; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">15</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">16</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">17</span>
+            <span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">18</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">19</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0; position: relative;">20<span class="event-dot" style="position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; background: #ef2326; border-radius: 50%;"></span></span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">21</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0; position: relative;">22<span class="event-dot" style="position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; background: #ef2326; border-radius: 50%;"></span></span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">23</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">24</span>
+            <span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">25</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">26</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0; position: relative;">27<span class="event-dot" style="position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; background: #ef2326; border-radius: 50%;"></span></span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">28</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0; position: relative;">29<span class="event-dot" style="position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; background: #ef2326; border-radius: 50%;"></span></span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">30</span><span class="cal-w-date" style="font-size: 12px; font-weight: 600; padding: 8px 0;">31</span>
+          </div>
+          
+          <div style="margin-top: 20px;">
+            <a href="#" style="color: #00796b; font-size: 13px; font-weight: 800;">Go to full calendar <span style="font-size: 14px;">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity Section -->
+      <div style="grid-column: 1 / 2; grid-row: span 2;">
+        <div class="dash-card recent-activity-card animate-fade-up" style="animation-delay: 1s; height: 100%; display: flex; flex-direction: column;">
+          <div class="card-header" style="margin-bottom: 0;">
+            <h3 class="card-title">Recent Activity</h3>
+          </div>
+          
+          <div class="activity-tabs" style="display: flex; gap: 20px; border-bottom: 1px solid var(--line); margin: 0 -28px 24px; padding: 0 28px;">
+            <button class="tab-btn active" style="padding: 12px 0; border: none; background: none; font-size: 13px; font-weight: 700; color: var(--brand); border-bottom: 2px solid var(--brand); cursor: pointer;">Assignments</button>
+            <button class="tab-btn" style="padding: 12px 0; border: none; background: none; font-size: 13px; font-weight: 700; color: var(--muted); cursor: pointer;">PDFs</button>
+            <button class="tab-btn" style="padding: 12px 0; border: none; background: none; font-size: 13px; font-weight: 700; color: var(--muted); cursor: pointer;">Quizzes</button>
+          </div>
+
+          <div class="activity-list" style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="activity-item" style="display: flex; align-items: center; gap: 14px;">
+              <div class="assign-icon-box" style="background: rgba(239, 35, 38, 0.08); color: var(--brand);">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <div class="assign-info" style="flex: 1;">
+                <strong class="assign-name" style="font-size: 13px; font-weight: 800; color: var(--text);">Assignment 2</strong>
+                <span class="assign-course" style="font-size: 11px; color: var(--muted); display: block;">Mathematics-II (2SMT-198)</span>
+              </div>
+              <div class="assign-status" style="color: #f97316; font-size: 11px; font-weight: 800; margin-right: 12px;">Due Tomorrow</div>
+              <button class="btn-open" style="padding: 8px 24px; border: 1px solid var(--line); border-radius: 8px; background: #fff; font-size: 13px; font-weight: 700; color: var(--text); cursor: pointer;">Open</button>
+            </div>
+            
+            <div class="activity-item" style="display: flex; align-items: center; gap: 14px;">
+              <div class="assign-icon-box" style="background: rgba(239, 35, 38, 0.08); color: var(--brand);">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <div class="assign-info" style="flex: 1;">
+                <strong class="assign-name" style="font-size: 13px; font-weight: 800; color: var(--text);">Assignment 1</strong>
+                <span class="assign-course" style="font-size: 11px; color: var(--muted); display: block;">Mathematics-II (2SMT-198)</span>
+              </div>
+              <div class="assign-status" style="color: var(--muted); font-size: 11px; font-weight: 800; margin-right: 12px;">Due May 20</div>
+              <button class="btn-open" style="padding: 8px 24px; border: 1px solid var(--line); border-radius: 8px; background: #fff; font-size: 13px; font-weight: 700; color: var(--text); cursor: pointer;">Open</button>
+            </div>
+
+            <div class="activity-item" style="display: flex; align-items: center; gap: 14px;">
+              <div class="assign-icon-box" style="background: rgba(239, 35, 38, 0.08); color: var(--brand);">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <div class="assign-info" style="flex: 1;">
+                <strong class="assign-name" style="font-size: 13px; font-weight: 800; color: var(--text);">Assignment 3</strong>
+                <span class="assign-course" style="font-size: 11px; color: var(--muted); display: block;">Digital Electronics (2SEC-101)</span>
+              </div>
+              <div class="assign-status" style="color: var(--muted); font-size: 11px; font-weight: 800; margin-right: 12px;">Due May 22</div>
+              <button class="btn-open" style="padding: 8px 24px; border: 1px solid var(--line); border-radius: 8px; background: #fff; font-size: 13px; font-weight: 700; color: var(--text); cursor: pointer;">Open</button>
+            </div>
+          </div>
+          
+          <div class="card-footer" style="margin-top: auto; padding-top: 24px;">
+            <a href="#" style="color: var(--brand); font-size: 13px; font-weight: 800;">View all activity <span style="font-size: 14px;">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div style="grid-column: 2 / -1;">
+        <div class="dash-card role-courses-card animate-fade-up" style="animation-delay: 1.1s; display: flex; align-items: center; justify-content: space-between;">
+          <div style="flex: 1;">
+            <h3 class="card-title" style="margin-bottom: 12px;">Role-based Courses</h3>
+            <div class="role-selector-container">
+              <label style="display: block; font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 6px;">Select Role</label>
+              <select class="analytics-select" style="width: 100%; max-width: 400px; background: #fff; border: 1px solid var(--line);">
+                <option>Courses as Teacher</option>
+              </select>
+            </div>
+          </div>
+          <div class="role-badge" style="width: 48px; height: 48px; border-radius: 50%; background: #fff1f2; color: #f43f5e; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+          </div>
+        </div>
+      </div>
+
+      <div style="grid-column: 2 / -1;">
+        <div class="dash-card recently-accessed-card animate-fade-up" style="animation-delay: 1.2s;">
+          <div class="card-header">
+            <h3 class="card-title">Recently Accessed Courses</h3>
+            <a href="#" style="color: #00796b; font-size: 13px; font-weight: 700;">View all</a>
+          </div>
+          
+          <div class="course-access-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+            <div class="access-card" style="background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+              <div class="access-icon-box" style="background: #7a4bbd; height: 100px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="white" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <div class="access-info" style="padding: 16px;">
+                <strong style="display: block; font-size: 12px; font-weight: 800; color: var(--text); margin-bottom: 4px;">Data Structures (2SCSH-103)</strong>
+                <span style="display: block; font-size: 11px; color: var(--muted); font-weight: 600;">EVEN_25262</span>
+              </div>
+            </div>
+            <div class="access-card" style="background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+              <div class="access-icon-box" style="background: #ed64a6; height: 100px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div class="access-info" style="padding: 16px;">
+                <strong style="display: block; font-size: 12px; font-weight: 800; color: var(--text); margin-bottom: 4px;">Engineering Physics (2SSPH-141)</strong>
+                <span style="display: block; font-size: 11px; color: var(--muted); font-weight: 600;">EVEN_25262</span>
+              </div>
+            </div>
+            <div class="access-card" style="background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+              <div class="access-icon-box" style="background: #48bb78; height: 100px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="white" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>
+              </div>
+              <div class="access-info" style="padding: 16px;">
+                <strong style="display: block; font-size: 12px; font-weight: 800; color: var(--text); margin-bottom: 4px;">Digital Electronics (2SEC-101)</strong>
+                <span style="display: block; font-size: 11px; color: var(--muted); font-weight: 600;">EVEN_25262</span>
+              </div>
+            </div>
+            <div class="access-card" style="background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+              <div class="access-icon-box" style="background: #4299e1; height: 100px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="white" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.04-2.44V4.5A2.5 2.5 0 0 1 7.5 2z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.04-2.44V4.5A2.5 2.5 0 0 0 16.5 2z"></path></svg>
+              </div>
+              <div class="access-info" style="padding: 16px;">
+                <strong style="display: block; font-size: 12px; font-weight: 800; color: var(--text); margin-bottom: 4px;">AI Applications Lab (2SECP-102)</strong>
+                <span style="display: block; font-size: 11px; color: var(--muted); font-weight: 600;">EVEN_2S262</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bg-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="footer-content shell">
+      <div class="footer-grid">
+        <div class="footer-column animate-fade-up">
+          <h3 class="footer-title">Get in touch</h3>
+          <p class="footer-description">Platform designed to help organizations, educators, and learners manage,
+            deliver, and track learning and training activities.</p>
+        </div>
+
+        <div class="footer-column animate-fade-up" style="--delay: 1">
+          <h3 class="footer-title">Popular Courses</h3>
+          <ul class="footer-links">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column animate-fade-up" style="--delay: 2">
+          <h3 class="footer-title">Company</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column animate-fade-up" style="--delay: 3">
+          <h3 class="footer-title">Contact Info</h3>
+          <p class="footer-description">Sign up to get updates & news.</p>
+          <form class="newsletter-form">
+            <div class="newsletter-input-wrapper">
+              <svg class="newsletter-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <input type="email" placeholder="Enter Email Address" class="newsletter-input" required />
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content shell">
+        <p class="footer-copyright">Copyright © 2025 LMS Theme All Rights Reserved</p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2s9 5 20 5a9.5 9.5 0 0 0-9-5.5c4.75 2.25 7-7 7-7">
+              </path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 2h-3a6 6 0 0 0-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+              </path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
