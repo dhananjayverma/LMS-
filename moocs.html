@@ -106,18 +106,6 @@
               <span class="tab-logo linkedin-logo">in</span>
               LinkedIn Learning
             </button>
-            <button class="moocs-tab" data-platform="udemy">
-              <span class="tab-logo udemy-logo">U</span>
-              Udemy
-            </button>
-            <button class="moocs-tab" data-platform="unacademy">
-              <span class="tab-logo unacademy-logo">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" fill="none" />
-                </svg>
-              </span>
-              Unacademy
-            </button>
           </div>
         </div>
 
@@ -202,7 +190,7 @@
     <div class="footer-content shell">
       <div class="footer-grid">
         <div class="footer-column animate-fade-up">
-          <h3 class="footer-title">Get in touch</h3>
+          <img class="brand__logo" src="log1.png" alt="Chandigarh University logo" style="height: 48px; margin-bottom: 24px;" />
           <p class="footer-description">Platform designed to help organizations, educators, and learners manage,
             deliver, and track learning and training activities.</p>
         </div>
@@ -228,47 +216,45 @@
         </div>
 
         <div class="footer-column animate-fade-up" style="--delay: 3">
-          <h3 class="footer-title">Contact Info</h3>
-          <p class="footer-description">Sign up to get updates & news.</p>
-          <form class="newsletter-form">
-            <div class="newsletter-input-wrapper">
-              <svg class="newsletter-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
+          <h3 class="footer-title" style="margin-bottom: 16px;">Contact us</h3>
+          <div style="display: flex; gap: 12px; margin-bottom: 32px;">
+            <a href="#" style="width: 44px; height: 44px; background: #c62818; color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
               </svg>
-              <input type="email" placeholder="Enter Email Address" class="newsletter-input" required />
-              <button type="submit" class="newsletter-btn">Subscribe</button>
-            </div>
-          </form>
+            </a>
+            <a href="#" style="width: 44px; height: 44px; background: #c62818; color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </a>
+          </div>
+
+          <h3 class="footer-title" style="margin-bottom: 16px;">Follow us</h3>
+          <div style="display: flex; gap: 10px;">
+            <a href="#" style="width: 40px; height: 40px; background: #3b5998; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" style="width: 40px; height: 40px; background: #1da1f2; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2s9 5 20 5a9.5 9.5 0 0 0-9-5.5c4.75 2.25 7-7 7-7"/></svg>
+            </a>
+            <a href="#" style="width: 40px; height: 40px; background: #e1306c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" style="width: 40px; height: 40px; background: #0077b5; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" style="width: 40px; height: 40px; background: #ff0000; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
       <div class="footer-bottom-content shell">
-        <p class="footer-copyright">Copyright © 2025 LMS Theme All Rights Reserved</p>
-        <div class="social-links">
-          <a href="#" aria-label="Twitter" class="social-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2s9 5 20 5a9.5 9.5 0 0 0-9-5.5c4.75 2.25 7-7 7-7">
-              </path>
-            </svg>
-          </a>
-          <a href="#" aria-label="Facebook" class="social-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M18 2h-3a6 6 0 0 0-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
-          <a href="#" aria-label="YouTube" class="social-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
-              </path>
-              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-            </svg>
-          </a>
-        </div>
+        <p class="footer-copyright" style="margin: 0 auto;">Copyright © 2025 LMS Theme All Rights Reserved</p>
       </div>
     </div>
   </footer>
@@ -321,9 +307,7 @@
   <script>
     const platformLabels = {
       'coursera': 'Coursera',
-      'linkedin': 'LinkedIn Learning',
-      'udemy': 'Udemy',
-      'unacademy': 'Unacademy'
+      'linkedin': 'LinkedIn Learning'
     };
 
     const platformData = {
@@ -460,148 +444,12 @@
           image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80',
           avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80'
         }
-      ],
-      'udemy': [
-        {
-          title: 'The Complete 2024 Web Development Bootcamp',
-          category: 'Development',
-          progress: '60%',
-          lessons: '48 Lessons',
-          rating: '4.9',
-          duration: '12 Weeks',
-          timeline: 'Full Lifetime Access',
-          charges: '₹499 (Limited Offer)',
-          description: 'Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, PostgreSQL and more!',
-          image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'AWS Certified Solutions Architect',
-          category: 'Cloud',
-          progress: '0%',
-          lessons: '35 Lessons',
-          rating: '4.9',
-          duration: '25 Hours',
-          timeline: 'Lifetime Access',
-          charges: '₹449',
-          description: 'Pass the AWS Certified Solutions Architect Associate Certification. Full coverage of all topics on the exam.',
-          image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'Digital Marketing Strategy Course',
-          category: 'Marketing',
-          progress: '0%',
-          lessons: '20 Lessons',
-          rating: '4.7',
-          duration: '15 Hours',
-          timeline: 'On-demand',
-          charges: '₹599',
-          description: 'Master Digital Marketing Strategy, Social Media Marketing, SEO, YouTube, Email, Facebook Marketing, and more.',
-          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'The Complete SQL Bootcamp',
-          category: 'Data',
-          progress: '0%',
-          lessons: '9 Lessons',
-          rating: '4.9',
-          duration: '9 Hours',
-          timeline: 'Lifetime Access',
-          charges: '₹449',
-          description: 'Learn SQL for Data Analysis with PostgreSQL. Real-world tasks and quizzes included to make you an expert.',
-          image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'Java Programming Masterclass',
-          category: 'Development',
-          progress: '0%',
-          lessons: '80 Lessons',
-          rating: '4.9',
-          duration: '80 Hours',
-          timeline: 'Lifetime Access',
-          charges: '₹599',
-          description: 'Learn Java, Android and much more. This is the only course you need to master Java Programming.',
-          image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80'
-        }
-      ],
-      'unacademy': [
-        {
-          title: 'UPSC CSE - GS: Comprehensive Course',
-          category: 'Exam Prep',
-          progress: '0%',
-          lessons: '150+ Lessons',
-          rating: '4.8',
-          duration: '12 Months',
-          timeline: 'Daily Live Classes',
-          charges: '₹2,500/Month',
-          description: 'Prepare for UPSC Civil Services Examination with India\'s top educators. Get comprehensive coverage of GS papers, current affairs, and mock tests.',
-          image: 'images/upsc.png',
-          avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'IIT JEE: Advanced Physics',
-          category: 'Engineering',
-          progress: '0%',
-          lessons: '45 Lessons',
-          rating: '4.9',
-          duration: '4 Months',
-          timeline: 'Scheduled',
-          charges: '₹1,200/Month',
-          description: 'Master Physics for IIT JEE Advanced. This course covers mechanics, thermodynamics, and electromagnetism with deep conceptual clarity.',
-          image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'NEET UG: Target 2025',
-          category: 'Medical',
-          progress: '0%',
-          lessons: '200+ Lessons',
-          rating: '4.8',
-          duration: '24 Months',
-          timeline: 'Live Classes',
-          charges: '₹3,500/Month',
-          description: 'Comprehensive preparation for NEET UG 2025. Covers Biology, Physics, and Chemistry with expert guidance.',
-          image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'Bank Exams: Quant for Prelims',
-          category: 'Banking',
-          progress: '0%',
-          lessons: '60 Lessons',
-          rating: '4.7',
-          duration: '2 Months',
-          timeline: 'Live Sessions',
-          charges: '₹900/Month',
-          description: 'Master Quantitative Aptitude for SBI and IBPS Clerk/PO Prelims with short tricks and conceptual depth.',
-          image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'CA Foundation: Principles of Accounting',
-          category: 'Commerce',
-          progress: '0%',
-          lessons: '80 Lessons',
-          rating: '4.9',
-          duration: '6 Months',
-          timeline: 'Scheduled',
-          charges: '₹1,500/Month',
-          description: 'Kickstart your CA journey with a solid foundation in accounting principles and practices taught by industry veterans.',
-          image: 'images/ca.png',
-          avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80'
-        }
       ]
     };
 
     const docLogos = {
       'coursera': 'C',
-      'linkedin': 'in',
-      'udemy': 'U',
-      'unacademy': 'UA'
+      'linkedin': 'in'
     };
 
     const modalOverlay = document.getElementById('modalOverlay');

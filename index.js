@@ -103,3 +103,30 @@ if (profileDropdown) {
     }
   });
 }
+
+// Recent Activity Tabs Logic
+const activityTabs = document.querySelectorAll('.activity-tabs .tab-btn');
+const activityLists = document.querySelectorAll('.activity-list');
+
+if (activityTabs.length > 0 && activityLists.length > 0) {
+  activityTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs
+      activityTabs.forEach(t => t.classList.remove('active'));
+      // Add active class to clicked tab
+      tab.classList.add('active');
+
+      // Hide all lists
+      activityLists.forEach(list => {
+        list.style.display = 'none';
+      });
+
+      // Show the target list
+      const targetId = tab.getAttribute('data-target');
+      const targetList = document.getElementById(targetId);
+      if (targetList) {
+        targetList.style.display = 'flex';
+      }
+    });
+  });
+}
