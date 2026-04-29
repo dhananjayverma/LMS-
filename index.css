@@ -3146,8 +3146,9 @@ svg {
   .hero {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
-    padding: 0 22px 22px;
+    padding: 16px 22px 24px;
     border-radius: 28px 28px 0 0;
+    background: linear-gradient(180deg, #fffafa 0%, #fff6f4 100%);
   }
 
   .hero__eyebrow,
@@ -3165,26 +3166,27 @@ svg {
   .hero__eyebrow {
     order: 1;
     justify-self: center;
-    margin: 0 auto 30px;
-    padding: 10px 18px;
+    margin: 0 auto 22px;
+    padding: 9px 16px;
     justify-content: center;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    border-radius: 0 0 22px 22px;
+    border-radius: 999px;
   }
 
   .hero__eyebrow-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 
   .hero__title {
     order: 2;
-    max-width: 100%;
-    margin: 0;
-    font-size: clamp(2.1rem, 10vw, 3.15rem);
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: clamp(1.75rem, 7.8vw, 2.25rem);
     line-height: 1.16;
   }
 
@@ -3202,9 +3204,9 @@ svg {
     order: 3;
     top: auto;
     right: auto;
-    width: min(96%, 430px);
+    width: min(102%, 430px);
     max-width: 430px;
-    margin: 8px auto 22px;
+    margin: 12px auto 22px;
     transform: none;
     z-index: 2;
   }
@@ -3213,34 +3215,34 @@ svg {
     order: 4;
     max-width: 100%;
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.58;
   }
 
   .hero__actions {
     order: 5;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
-    margin-top: 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 26px;
   }
 
   .primary-btn,
   .secondary-btn {
     position: relative;
     width: 100%;
-    min-height: 58px;
-    padding: 14px 70px 14px 24px;
+    min-height: 54px;
+    padding: 12px 42px 12px 12px;
     justify-content: center;
     border-radius: 16px;
-    font-size: 17px;
-    gap: 18px;
+    font-size: 13px;
+    gap: 8px;
   }
 
   .btn-icon {
     position: absolute;
-    right: 18px;
-    width: 36px;
-    height: 36px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
   }
 
   .feature-list {
@@ -3254,20 +3256,20 @@ svg {
 
   .hero__shape--main {
     order: 3;
-    top: 318px;
+    top: 258px;
     right: auto;
-    left: 20px;
-    width: 310px;
-    height: 220px;
+    left: 18px;
+    width: 300px;
+    height: 216px;
     z-index: 1;
   }
 
   .hero__shape--soft {
     order: 3;
-    top: 270px;
-    right: -42px;
-    width: 360px;
-    height: 390px;
+    top: 222px;
+    right: -48px;
+    width: 365px;
+    height: 398px;
     z-index: 1;
   }
 
@@ -3275,7 +3277,7 @@ svg {
     display: block;
     order: 3;
     left: 22px;
-    top: 442px;
+    top: 418px;
     width: 90px;
     height: 88px;
     opacity: 0.55;
@@ -3283,11 +3285,11 @@ svg {
 
   .hero__dots--right {
     order: 2;
-    top: 158px;
-    right: 28px;
-    width: 92px;
-    height: 100px;
-    opacity: 0.55;
+    top: 196px;
+    right: 42px;
+    width: 82px;
+    height: 88px;
+    opacity: 0.42;
   }
 }
 
@@ -3298,21 +3300,44 @@ svg {
 
   .hero__eyebrow {
     max-width: calc(100% - 16px);
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .hero__title {
-    font-size: clamp(2rem, 10.6vw, 2.75rem);
+    font-size: clamp(1.55rem, 7.8vw, 2rem);
   }
 
   .hero__description {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .primary-btn,
   .secondary-btn {
-    min-height: 56px;
-    font-size: 16px;
+    min-height: 50px;
+    font-size: 12px;
+  }
+
+  .hero__shape--main {
+    top: 244px;
+    left: 8px;
+    width: 270px;
+    height: 194px;
+  }
+
+  .hero__shape--soft {
+    top: 210px;
+    right: -58px;
+    width: 330px;
+    height: 360px;
+  }
+
+  .hero__dots--left {
+    top: 390px;
+  }
+
+  .hero__dots--right {
+    top: 184px;
+    right: 12px;
   }
 }
 
