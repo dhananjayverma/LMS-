@@ -32,7 +32,21 @@ navLinks.forEach((link) => {
   });
 });
 
-const courseCards = document.querySelectorAll(".course-card, .discover-card");
+const courseGrid = document.querySelector(".course-grid");
+const previousCoursesButton = document.querySelector('[aria-label="Previous courses"]');
+const nextCoursesButton = document.querySelector('[aria-label="Next courses"]');
+
+if (courseGrid && previousCoursesButton && nextCoursesButton) {
+  previousCoursesButton.addEventListener("click", () => {
+    courseGrid.style.animationDirection = "reverse";
+  });
+
+  nextCoursesButton.addEventListener("click", () => {
+    courseGrid.style.animationDirection = "normal";
+  });
+}
+
+const courseCards = document.querySelectorAll(".course-card:not(.course-card--clone), .discover-card, .mycourse-card");
 
 const getCourseValue = (card, selector, fallback = "") => {
   return card.querySelector(selector)?.textContent.trim() || fallback;
@@ -40,13 +54,21 @@ const getCourseValue = (card, selector, fallback = "") => {
 
 const openCourseDetail = (card) => {
   const title = getCourseValue(card, "h3", "Course Overview");
-  const category = getCourseValue(card, ".discover-card__meta span:first-child", "CU LMS Course");
+  const category =
+    getCourseValue(card, ".discover-card__meta span:first-child") ||
+    getCourseValue(card, ".mycourse-card__category", "CU LMS Course");
   const progress =
     getCourseValue(card, ".progress strong") ||
     getCourseValue(card, ".discover-card__badge") ||
+    getCourseValue(card, ".mycourse-card__progress-value") ||
     "Open";
-  const lessons = getCourseValue(card, ".discover-card__stats span:first-child", "Structured lessons");
-  const image = card.querySelector(".discover-card__image")?.getAttribute("src") || "";
+  const lessons =
+    getCourseValue(card, ".discover-card__stats span:first-child") ||
+    getCourseValue(card, ".mycourse-card__footer span", "Structured lessons");
+  const image =
+    card.querySelector(".discover-card__image")?.getAttribute("src") ||
+    card.querySelector(".mycourse-card__image")?.getAttribute("src") ||
+    "";
 
   const params = new URLSearchParams({
     title,

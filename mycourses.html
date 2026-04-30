@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Courses | CU LMS Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body class="mycourses-page">
+  <div class="page-shell">
+    <header class="site-header shell">
+      <div class="navbar">
+        <a class="brand" href="index.html" aria-label="Chandigarh University">
+          <img class="brand__logo" src="log1.png" alt="Chandigarh University logo" />
+        </a>
+
+        <nav class="navbar__links" id="primary-navigation" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="dashboard.html">Dashboard</a>
+          <a class="nav-link active" href="mycourses.html">My Courses</a>
+          <a class="nav-link" href="moocs.html">MOOCs Courses</a>
+        </nav>
+
+        <div class="navbar__actions">
+          <button class="circle-btn" type="button" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16l5 5"></path>
+            </svg>
+          </button>
+          <button class="circle-btn notification-btn" type="button" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 17H4.5a1 1 0 0 1-.76-1.65l1.26-1.48V9a7 7 0 1 1 14 0v4.87l1.26 1.48A1 1 0 0 1 19.5 17H18"></path>
+              <path d="M9 19a3 3 0 0 0 6 0"></path>
+            </svg>
+          </button>
+          <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false"
+            aria-controls="primary-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell mycourses-shell">
+      <section class="course-workspace" aria-labelledby="mycourses-title">
+        <div class="course-workspace__top">
+          <div>
+            <span class="course-workspace__kicker">My Learning</span>
+            <h1 id="mycourses-title">My Courses</h1>
+            <p>Continue enrolled courses, check progress, and jump back into the next lesson.</p>
+          </div>
+
+          <a class="course-workspace__back" href="dashboard.html">Dashboard</a>
+        </div>
+
+        <div class="course-metrics" aria-label="Course summary">
+          <div class="course-metric">
+            <span>Active Courses</span>
+            <strong>08</strong>
+          </div>
+          <div class="course-metric">
+            <span>Completed</span>
+            <strong>04</strong>
+          </div>
+          <div class="course-metric">
+            <span>Pending Tasks</span>
+            <strong>12</strong>
+          </div>
+          <div class="course-metric">
+            <span>Average Progress</span>
+            <strong>60%</strong>
+          </div>
+        </div>
+
+        <div class="course-toolbar" aria-label="Course filters">
+          <label class="course-search" aria-label="Search courses">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16l5 5"></path>
+            </svg>
+            <input type="search" placeholder="Search courses" />
+          </label>
+
+          <div class="course-filter-tabs" aria-label="Course status filters">
+            <button class="is-active" type="button">All</button>
+            <button type="button">In Progress</button>
+            <button type="button">Completed</button>
+            <button type="button">New</button>
+          </div>
+        </div>
+
+        <div class="mycourse-grid">
+          <article class="mycourse-card" tabindex="0">
+            <img class="mycourse-card__image"
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+              alt="People reviewing interface wireframes on a desk" />
+            <div class="mycourse-card__body">
+              <div class="mycourse-card__meta">
+                <span class="mycourse-card__category">Web Design</span>
+                <span class="mycourse-card__progress-value">60%</span>
+              </div>
+              <h3>Information About UI/UX Design Degree</h3>
+              <div class="mycourse-progress" aria-label="60 percent complete">
+                <span style="width: 60%"></span>
+              </div>
+              <div class="mycourse-card__footer">
+                <span>5 Lessons</span>
+                <a href="course-detail.html">Continue</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="mycourse-card" tabindex="0">
+            <img class="mycourse-card__image"
+              src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80"
+              alt="Music studio with guitars and instruments" />
+            <div class="mycourse-card__body">
+              <div class="mycourse-card__meta">
+                <span class="mycourse-card__category">Music</span>
+                <span class="mycourse-card__progress-value">45%</span>
+              </div>
+              <h3>Information About Music Work</h3>
+              <div class="mycourse-progress" aria-label="45 percent complete">
+                <span style="width: 45%"></span>
+              </div>
+              <div class="mycourse-card__footer">
+                <span>5 Lessons</span>
+                <a href="course-detail.html">Continue</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="mycourse-card" tabindex="0">
+            <img class="mycourse-card__image"
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+              alt="Laptop setup for web development" />
+            <div class="mycourse-card__body">
+              <div class="mycourse-card__meta">
+                <span class="mycourse-card__category">Web Development</span>
+                <span class="mycourse-card__progress-value">72%</span>
+              </div>
+              <h3>Information About Development Work</h3>
+              <div class="mycourse-progress" aria-label="72 percent complete">
+                <span style="width: 72%"></span>
+              </div>
+              <div class="mycourse-card__footer">
+                <span>5 Lessons</span>
+                <a href="course-detail.html">Continue</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="mycourse-card" tabindex="0">
+            <img class="mycourse-card__image"
+              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80"
+              alt="Photographer using a camera outdoors" />
+            <div class="mycourse-card__body">
+              <div class="mycourse-card__meta">
+                <span class="mycourse-card__category">Photography</span>
+                <span class="mycourse-card__progress-value">30%</span>
+              </div>
+              <h3>Information About Photography Work</h3>
+              <div class="mycourse-progress" aria-label="30 percent complete">
+                <span style="width: 30%"></span>
+              </div>
+              <div class="mycourse-card__footer">
+                <span>5 Lessons</span>
+                <a href="course-detail.html">Continue</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="mycourse-card" tabindex="0">
+            <img class="mycourse-card__image"
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+              alt="People reviewing interface wireframes on a desk" />
+            <div class="mycourse-card__body">
+              <div class="mycourse-card__meta">
+                <span class="mycourse-card__category">Web Design</span>
+                <span class="mycourse-card__progress-value">85%</span>
+              </div>
+              <h3>Advanced UI Components</h3>
+              <div class="mycourse-progress" aria-label="85 percent complete">
+                <span style="width: 85%"></span>
+              </div>
+              <div class="mycourse-card__footer">
+                <span>5 Lessons</span>
+                <a href="course-detail.html">Continue</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="mycourse-card" tabindex="0">
+            <img class="mycourse-card__image"
+              src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80"
+              alt="Music studio with guitars and instruments" />
+            <div class="mycourse-card__body">
+              <div class="mycourse-card__meta">
+                <span class="mycourse-card__category">Music</span>
+                <span class="mycourse-card__progress-value">100%</span>
+              </div>
+              <h3>Music Production Basics</h3>
+              <div class="mycourse-progress" aria-label="100 percent complete">
+                <span style="width: 100%"></span>
+              </div>
+              <div class="mycourse-card__footer">
+                <span>5 Lessons</span>
+                <a href="course-detail.html">Review</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="mycourse-card" tabindex="0">
+            <img class="mycourse-card__image"
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+              alt="Laptop setup for web development" />
+            <div class="mycourse-card__body">
+              <div class="mycourse-card__meta">
+                <span class="mycourse-card__category">Web Development</span>
+                <span class="mycourse-card__progress-value">25%</span>
+              </div>
+              <h3>Frontend Development Practice</h3>
+              <div class="mycourse-progress" aria-label="25 percent complete">
+                <span style="width: 25%"></span>
+              </div>
+              <div class="mycourse-card__footer">
+                <span>5 Lessons</span>
+                <a href="course-detail.html">Continue</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="mycourse-card" tabindex="0">
+            <img class="mycourse-card__image"
+              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80"
+              alt="Photographer using a camera outdoors" />
+            <div class="mycourse-card__body">
+              <div class="mycourse-card__meta">
+                <span class="mycourse-card__category">Photography</span>
+                <span class="mycourse-card__progress-value">68%</span>
+              </div>
+              <h3>Creative Photo Editing</h3>
+              <div class="mycourse-progress" aria-label="68 percent complete">
+                <span style="width: 68%"></span>
+              </div>
+              <div class="mycourse-card__footer">
+                <span>5 Lessons</span>
+                <a href="course-detail.html">Continue</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
