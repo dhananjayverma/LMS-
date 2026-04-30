@@ -912,28 +912,35 @@ svg {
 }
 
 .course-grid {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 2px 2px 12px;
+  overflow: hidden;
+}
+
+.course-grid.owl-loaded {
+  display: block;
+}
+
+.course-grid:not(.owl-loaded) {
   display: flex;
   gap: 14px;
-  width: max-content;
-  min-width: max-content;
-  padding: 2px 2px 12px;
-  animation: courses-marquee 18s linear infinite;
-  will-change: transform;
+  overflow-x: auto;
 }
 
-.courses-section:hover .course-grid,
-.courses-section:focus-within .course-grid {
-  animation-play-state: paused;
+.course-grid .owl-stage {
+  display: flex;
+  align-items: stretch;
 }
 
-@keyframes courses-marquee {
-  from {
-    transform: translateX(0);
-  }
+.course-grid .owl-item {
+  display: flex;
+}
 
-  to {
-    transform: translateX(-50%);
-  }
+.course-grid .owl-item .course-card {
+  width: 100%;
+  height: 100%;
 }
 
 .course-card {
@@ -1803,9 +1810,10 @@ svg {
 
 .benefits-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  grid-template-columns: minmax(320px, 0.9fr) minmax(560px, 760px);
   align-items: center;
-  gap: 48px;
+  justify-content: space-between;
+  gap: 42px;
   margin-top: 44px;
   padding: 36px 6px 18px;
 }
@@ -1881,50 +1889,53 @@ svg {
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px 22px;
+  gap: 20px;
+  width: 100%;
+  max-width: 760px;
+  justify-self: end;
 }
 
 .benefit-card {
-  min-height: 270px;
-  padding: 26px 28px 24px;
+  min-height: 210px;
+  padding: 22px 24px 20px;
   border: 1px solid transparent;
-  border-radius: 18px;
-  box-shadow: 0 18px 38px rgba(30, 35, 62, 0.06);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(30, 35, 62, 0.05);
 }
 
 .benefit-card:nth-child(2),
 .benefit-card:nth-child(4) {
-  transform: translateY(-44px);
+  transform: translateY(-32px);
 }
 
 .benefit-card__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 82px;
-  height: 82px;
+  width: 64px;
+  height: 64px;
   border-radius: 999px;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .benefit-card__icon svg {
-  width: 34px;
-  height: 34px;
+  width: 26px;
+  height: 26px;
 }
 
 .benefit-card h3 {
   margin: 0;
-  font-size: 18px;
-  line-height: 1.22;
+  font-size: 15px;
+  line-height: 1.28;
   font-weight: 800;
   color: #3e4147;
 }
 
 .benefit-card p {
-  margin: 14px 0 0;
+  margin: 10px 0 0;
   color: #7e8188;
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .benefit-card--mint {
@@ -3230,6 +3241,360 @@ svg {
   color: #ffffff;
 }
 
+.moocs-section {
+  padding: 22px 0 58px;
+}
+
+.moocs-summary-card,
+.moocs-table-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(20, 28, 45, 0.06);
+  border-radius: 8px;
+  box-shadow: 0 14px 36px rgba(30, 35, 62, 0.08);
+}
+
+.moocs-summary-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1fr);
+  gap: 32px;
+  padding: 28px;
+  margin-bottom: 18px;
+}
+
+.moocs-summary-heading h1,
+.moocs-summary-heading h2 {
+  margin: 0;
+  color: #c72a17;
+  font-size: 31px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.moocs-summary-heading h2 {
+  color: #1f2937;
+  font-size: 20px;
+}
+
+.moocs-summary-heading p {
+  margin: 8px 0 0;
+  color: #667085;
+  font-size: 14px;
+}
+
+.moocs-summary-heading--compact {
+  margin-bottom: 22px;
+}
+
+.moocs-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 22px;
+  margin-top: 32px;
+}
+
+.moocs-metric-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-areas:
+    "icon label"
+    "icon value";
+  align-items: center;
+  column-gap: 20px;
+  min-height: 106px;
+  padding: 24px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--metric-color) 9%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--metric-color) 18%, #ffffff);
+  box-shadow: 0 12px 28px rgba(30, 35, 62, 0.07);
+}
+
+.moocs-metric-icon {
+  grid-area: icon;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  color: var(--metric-color);
+  background: color-mix(in srgb, var(--metric-color) 13%, #ffffff);
+}
+
+.moocs-metric-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.moocs-metric-card span:not(.moocs-metric-icon) {
+  grid-area: label;
+  color: #3f4652;
+  font-size: 14px;
+}
+
+.moocs-metric-card strong {
+  grid-area: value;
+  color: var(--metric-color);
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.moocs-overview-panel {
+  min-width: 0;
+  padding: 24px 24px 18px;
+  border: 1px solid rgba(20, 28, 45, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(30, 35, 62, 0.06);
+}
+
+.moocs-chart {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  min-height: 230px;
+}
+
+.moocs-chart-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 3px 9px 28px 0;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.moocs-chart-plot {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(82px, 1fr));
+  align-items: end;
+  gap: 22px;
+  min-width: 0;
+  padding: 0 6px 0;
+  border-left: 1px solid #d9dde5;
+  border-bottom: 1px solid #d9dde5;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 39px,
+      rgba(139, 148, 163, 0.22) 40px
+    );
+}
+
+.moocs-chart-bar-group {
+  display: grid;
+  grid-template-rows: 20px 1fr 24px;
+  justify-items: center;
+  align-items: end;
+  height: 100%;
+  min-width: 0;
+  color: #343946;
+}
+
+.moocs-chart-bar-group strong {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.moocs-chart-bar {
+  display: block;
+  width: min(100%, 78px);
+  height: var(--bar-height);
+  min-height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bar-color) 72%, #ffffff), var(--bar-color));
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--bar-color) 22%, transparent);
+}
+
+.moocs-chart-bar-group em {
+  align-self: center;
+  min-width: 0;
+  color: #5c6370;
+  font-size: 12px;
+  font-style: normal;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.moocs-chart-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.moocs-chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #667085;
+  font-size: 13px;
+}
+
+.moocs-chart-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.moocs-table-card {
+  padding: 24px;
+}
+
+.moocs-table-card .moocs-tabs {
+  display: flex;
+  gap: 34px;
+  border-bottom: 1px solid rgba(20, 28, 45, 0.12);
+}
+
+.moocs-table-card .moocs-tab {
+  display: inline-flex;
+  width: auto;
+  padding: 0 20px 14px;
+  border: 0;
+  color: #3f4652;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.moocs-table-card .moocs-tab.active {
+  color: #d82318;
+  background: transparent;
+}
+
+.moocs-table-card .moocs-tab.active::after {
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #d82318;
+  box-shadow: none;
+}
+
+.moocs-course-panel {
+  margin-top: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(20, 28, 45, 0.1);
+  border-radius: 6px;
+}
+
+.moocs-course-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 16px;
+  min-height: 50px;
+  color: #fff;
+  background: linear-gradient(180deg, #e11d0f 0%, #bb160b 100%);
+}
+
+.moocs-course-panel__header h2 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.moocs-certificate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 4px;
+  color: #d82318;
+  background: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(90, 20, 12, 0.16);
+}
+
+.moocs-certificate-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.moocs-table-wrap {
+  overflow-x: auto;
+  background: #fff;
+}
+
+.moocs-course-table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: collapse;
+}
+
+.moocs-course-table th,
+.moocs-course-table td {
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(20, 28, 45, 0.1);
+  color: #555e6d;
+  font-size: 13px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.moocs-course-table th {
+  color: #4b5563;
+  font-weight: 800;
+  background: #fff;
+}
+
+.moocs-course-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.table-head-icon,
+.moocs-course-name,
+.moocs-date,
+.moocs-progress,
+.moocs-certificate-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-head-icon svg,
+.moocs-course-name svg,
+.moocs-date svg,
+.moocs-certificate-link svg {
+  width: 15px;
+  height: 15px;
+}
+
+.moocs-course-name svg,
+.moocs-certificate-link {
+  color: #e0382c;
+}
+
+.moocs-progress {
+  gap: 12px;
+}
+
+.moocs-progress i {
+  display: block;
+  width: 140px;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #d9dde2;
+}
+
+.moocs-progress b {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #31b85b;
+}
+
+.moocs-certificate-link {
+  color: #d82318;
+  font-weight: 600;
+}
+
 /* Course Detail Modal */
 .course-modal-overlay {
   position: fixed;
@@ -3597,6 +3962,62 @@ svg {
   .course-card p,
   .progress strong {
     text-align: left;
+  }
+}
+
+@media (max-width: 1180px) {
+  .moocs-summary-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .moocs-overview-panel {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .moocs-summary-card,
+  .moocs-table-card {
+    padding: 16px;
+  }
+
+  .moocs-summary-heading h1 {
+    font-size: 24px;
+  }
+
+  .moocs-metric-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .moocs-metric-card {
+    min-height: 88px;
+    padding: 18px;
+  }
+
+  .moocs-chart {
+    min-width: 640px;
+  }
+
+  .moocs-table-card .moocs-tabs {
+    display: flex;
+    gap: 18px;
+  }
+
+  .moocs-table-card .moocs-tab {
+    border: 0;
+    padding-inline: 8px;
+  }
+
+  .moocs-course-panel__header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px;
+  }
+
+  .moocs-certificate-btn {
+    width: 100%;
   }
 }
 

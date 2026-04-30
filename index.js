@@ -35,18 +35,57 @@ navLinks.forEach((link) => {
 const courseGrid = document.querySelector(".course-grid");
 const previousCoursesButton = document.querySelector('[aria-label="Previous courses"]');
 const nextCoursesButton = document.querySelector('[aria-label="Next courses"]');
+const courseCarousel = window.jQuery ? window.jQuery(".course-grid") : null;
 
 if (courseGrid && previousCoursesButton && nextCoursesButton) {
-  previousCoursesButton.addEventListener("click", () => {
-    courseGrid.style.animationDirection = "reverse";
-  });
+  if (courseCarousel?.length && typeof courseCarousel.owlCarousel === "function") {
+    courseCarousel.owlCarousel({
+      loop: true,
+      margin: 16,
+      nav: false,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true,
+      smartSpeed: 450,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        640: {
+          items: 2,
+        },
+        1024: {
+          items: 3,
+        },
+        1280: {
+          items: 4,
+        },
+        1536: {
+          items: 5,
+        },
+      },
+    });
 
-  nextCoursesButton.addEventListener("click", () => {
-    courseGrid.style.animationDirection = "normal";
-  });
+    previousCoursesButton.addEventListener("click", () => {
+      courseCarousel.trigger("prev.owl.carousel");
+    });
+
+    nextCoursesButton.addEventListener("click", () => {
+      courseCarousel.trigger("next.owl.carousel");
+    });
+  } else {
+    previousCoursesButton.addEventListener("click", () => {
+      courseGrid.scrollBy({ left: -300, behavior: "smooth" });
+    });
+
+    nextCoursesButton.addEventListener("click", () => {
+      courseGrid.scrollBy({ left: 300, behavior: "smooth" });
+    });
+  }
 }
 
-const courseCards = document.querySelectorAll(".course-card:not(.course-card--clone), .discover-card, .mycourse-card");
+const courseCards = document.querySelectorAll(".course-card, .discover-card, .mycourse-card");
 
 const getCourseValue = (card, selector, fallback = "") => {
   return card.querySelector(selector)?.textContent.trim() || fallback;

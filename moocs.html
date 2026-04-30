@@ -79,102 +79,70 @@
 
     <main class="shell">
       <section class="moocs-section">
-        <div class="moocs-bg-shapes">
-          <div class="shape shape-1"></div>
+        <div class="moocs-summary-card animate-fade-up">
+          <div class="moocs-program-summary">
+            <div class="moocs-summary-heading">
+              <h1 id="summary-title">Coursera Program Summary</h1>
+              <p id="summary-subtitle">Overview of your Coursera learning journey</p>
+            </div>
+
+            <div class="moocs-metric-grid" id="metricGrid"></div>
+          </div>
+
+          <div class="moocs-overview-panel">
+            <div class="moocs-summary-heading moocs-summary-heading--compact">
+              <h2 id="overview-title">Coursera Overview</h2>
+              <p>Comparative summary of key metrics</p>
+            </div>
+            <div class="moocs-chart" id="overviewChart" aria-label="Program metrics chart"></div>
+            <div class="moocs-chart-legend" id="chartLegend"></div>
+          </div>
         </div>
 
-        <div class="moocs-header animate-fade-up">
-          <div class="moocs-header__icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-              <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
-            </svg>
-          </div>
-          <div class="moocs-header__text">
-            <h1 class="moocs-title">MOOCs Courses</h1>
-            <p class="moocs-subtitle">All your learning. One place.</p>
-          </div>
-        </div>
-
-        <div class="moocs-tabs-card animate-fade-up" style="--delay: 1">
+        <div class="moocs-table-card animate-fade-up" style="--delay: 1">
           <div class="moocs-tabs">
-            <button class="moocs-tab active" data-platform="coursera">
-              <span class="tab-logo coursera-logo">C</span>
-              Coursera
-            </button>
-            <button class="moocs-tab" data-platform="linkedin">
-              <span class="tab-logo linkedin-logo">in</span>
-              LinkedIn Learning
-            </button>
+            <button class="moocs-tab active" data-platform="coursera">Coursera</button>
+            <button class="moocs-tab" data-platform="linkedin">LinkedIn</button>
           </div>
-        </div>
 
-        <div class="moocs-content-card animate-fade-up" style="--delay: 2">
-          <div class="content-header">
-            <div class="content-header__text">
-              <h2 class="content-title">Your <span id="platform-title">Coursera</span> Courses</h2>
-              <p class="content-subtitle">View, manage, and continue your <span id="platform-subtitle">Coursera</span>
-                learning in one place.</p>
-            </div>
-            <div class="content-header__actions">
-              <div class="search-field">
-                <svg class="search-icon" viewBox="0 0 24 24">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <path d="M21 21l-4.35-4.35"></path>
+          <div class="moocs-course-panel">
+            <div class="moocs-course-panel__header">
+              <h2 id="course-batch-title">CSE 3rd Year_JJ_2026 (VAC)</h2>
+              <button class="moocs-certificate-btn" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 3v4"></path>
+                  <path d="M16 3v4"></path>
+                  <rect x="4" y="5" width="16" height="16" rx="2"></rect>
+                  <path d="M8 11h8"></path>
+                  <path d="M8 15h5"></path>
                 </svg>
-                <input type="text" placeholder="Search courses" />
-              </div>
-              <button class="filter-btn">
-                <svg class="filter-icon" viewBox="0 0 24 24">
-                  <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"></path>
-                </svg>
-                Filters
-                <svg class="chevron-icon" viewBox="0 0 24 24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
+                My Certificate
               </button>
             </div>
-          </div>
 
-          <div class="moocs-main-content">
-            <div class="empty-state">
-              <div class="empty-illustration">
-                <div class="illustration-box">
-                  <div class="illustration-doc">
-                    <span class="doc-logo">C</span>
-                  </div>
-                  <div class="illustration-alert">!</div>
-                </div>
-                <div class="illustration-dots"></div>
-              </div>
-              <h3 class="empty-title">No <span id="empty-platform">Coursera</span> courses found</h3>
-              <p class="empty-desc">We couldn't find any <span id="empty-platform-desc">Coursera</span> courses linked
-                to your account. Make sure your account is connected or try again later.</p>
-              <button class="refresh-btn">
-                Refresh
-                <svg viewBox="0 0 24 24">
-                  <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15">
-                  </path>
-                </svg>
-              </button>
+            <div class="moocs-table-wrap">
+              <table class="moocs-course-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <span class="table-head-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <rect x="4" y="5" width="16" height="16" rx="2"></rect>
+                          <path d="M8 3v4"></path>
+                          <path d="M16 3v4"></path>
+                        </svg>
+                        Course
+                      </span>
+                    </th>
+                    <th>Partner</th>
+                    <th>Completed At</th>
+                    <th>Progress</th>
+                    <th>Certificate</th>
+                  </tr>
+                </thead>
+                <tbody id="moocsTableBody"></tbody>
+              </table>
             </div>
-          </div>
-
-          <div class="connection-banner">
-            <div class="banner-info">
-              <div class="banner-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                </svg>
-              </div>
-              <div class="banner-text">
-                <strong>Not seeing your courses?</strong>
-                <p>Make sure your <span id="banner-platform">Coursera</span> account is connected to view your learning
-                  here.</p>
-              </div>
-            </div>
-            <button class="banner-btn">Check connection</button>
           </div>
         </div>
       </section>
@@ -305,260 +273,140 @@
   </div>
 
   <script>
-    const platformLabels = {
-      'coursera': 'Coursera',
-      'linkedin': 'LinkedIn Learning'
-    };
-
     const platformData = {
-      'coursera': [
-        {
-          title: 'Google Data Analytics Professional Certificate',
-          category: 'Data Science',
-          progress: '80%',
-          lessons: '24 Lessons',
-          rating: '4.8',
-          duration: '6 Months',
-          timeline: 'Flexible Schedule',
-          charges: '$49/Month',
-          description: 'Get professional training from Google and learn the foundational skills of data analytics. You will learn to clean, visualize and analyze data with tools like SQL, R, and Tableau.',
-          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'IBM Data Science Professional Certificate',
-          category: 'Data Science',
-          progress: '45%',
-          lessons: '18 Lessons',
-          rating: '4.7',
-          duration: '10 Months',
-          timeline: 'Self-paced',
-          charges: '$39/Month',
-          description: 'Prepare for a career in data science. Learn open source tools, libraries, Python, databases, SQL, data visualization, and data analysis.',
-          image: 'https://images.unsplash.com/photo-1527474305487-b87b222841cc?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'Machine Learning Specialization',
-          category: 'AI & ML',
-          progress: '0%',
-          lessons: '32 Lessons',
-          rating: '4.9',
-          duration: '3 Months',
-          timeline: 'Flexible',
-          charges: 'Free to Audit',
-          description: 'A foundational online program created in collaboration between DeepLearning.AI and Stanford Online. This specialization will help you master the fundamentals of AI.',
-          image: 'images/ml.png',
-          avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'Financial Markets (Yale University)',
-          category: 'Finance',
-          progress: '0%',
-          lessons: '15 Lessons',
-          rating: '4.8',
-          duration: '7 Weeks',
-          timeline: 'Self-paced',
-          charges: '$49 (Certificate)',
-          description: 'An overview of the ideas, methods, and institutions that permit human society to manage risks and foster enterprise.',
-          image: 'images/finance.png',
-          avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'Python for Everybody Specialization',
-          category: 'Programming',
-          progress: '10%',
-          lessons: '40 Lessons',
-          rating: '4.8',
-          duration: '4 Months',
-          timeline: 'Flexible',
-          charges: 'Free',
-          description: 'This Specialization builds on the success of the Python for Everybody course and will introduce fundamental programming concepts including data structures.',
-          image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80'
-        }
-      ],
-      'linkedin': [
-        {
-          title: 'Project Management Foundations',
-          category: 'Business',
-          progress: '100%',
-          lessons: '12 Lessons',
-          rating: '4.9',
-          duration: '3 Weeks',
-          timeline: 'Video on demand',
-          charges: 'Premium Required',
-          description: 'Learn the fundamentals of project management, from project initiation to closing. Master key methodologies and best practices.',
-          image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'Artificial Intelligence Foundations',
-          category: 'Technology',
-          progress: '0%',
-          lessons: '8 Lessons',
-          rating: '4.7',
-          duration: '4 Hours',
-          timeline: 'Video',
-          charges: 'Premium',
-          description: 'Understand the basic concepts, terminologies, and real-world applications of Artificial Intelligence and Machine Learning.',
-          image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'Leading with Emotional Intelligence',
-          category: 'Soft Skills',
-          progress: '0%',
-          lessons: '10 Lessons',
-          rating: '4.9',
-          duration: '2 Hours',
-          timeline: 'On-demand',
-          charges: 'Premium',
-          description: 'Learn how to use emotional intelligence to lead more effectively, build stronger relationships, and manage stress in the workplace.',
-          image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'Data Science Foundations: Fundamentals',
-          category: 'Data Science',
-          progress: '0%',
-          lessons: '15 Lessons',
-          rating: '4.8',
-          duration: '5 Hours',
-          timeline: 'Video Course',
-          charges: 'Premium',
-          description: 'Get an overview of what data science is and how to apply it in your organization to make better data-driven decisions.',
-          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80'
-        },
-        {
-          title: 'Excel Essential Training (365)',
-          category: 'Productivity',
-          progress: '0%',
-          lessons: '22 Lessons',
-          rating: '4.9',
-          duration: '3 Hours',
-          timeline: 'Video',
-          charges: 'Premium',
-          description: 'Master the most essential features of Microsoft Excel, from basic calculations to complex pivot tables and data analysis.',
-          image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80',
-          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80'
-        }
-      ]
+      coursera: {
+        name: 'Coursera',
+        batch: 'CSE 3rd Year_JJ_2026 (VAC)',
+        metrics: [
+          { label: 'Programs', value: 106, color: '#ef3d76', icon: 'book' },
+          { label: 'Courses', value: 15582, color: '#2d9cea', icon: 'cap' },
+          { label: 'Enrolled Students', value: 154986, color: '#f3a300', icon: 'users' },
+          { label: 'Completed Students', value: 99413, color: '#21ad8a', icon: 'check' }
+        ],
+        courses: [
+          { title: 'Advanced Web Exploits, Python Scripting & Network Attacks', partner: '"Packt"', completedAt: '24-03-2026', progress: 90, certificate: true },
+          { title: 'Design and Analyze Secure Networked Systems', partner: '"University of Colorado System"', completedAt: '-', progress: 0, certificate: false },
+          { title: 'Ethical Hacking Foundations & Network Security', partner: '"Packt"', completedAt: '24-03-2026', progress: 91, certificate: true },
+          { title: 'Exploit Development, Malware, & Defensive Strategies', partner: '"Packt"', completedAt: '24-03-2026', progress: 92, certificate: true },
+          { title: 'Web Security, Social Engineering & External Attacks', partner: '"Packt"', completedAt: '24-03-2026', progress: 91, certificate: true }
+        ]
+      },
+      linkedin: {
+        name: 'LinkedIn',
+        batch: 'LinkedIn Learning_JJ_2026 (VAC)',
+        metrics: [
+          { label: 'Programs', value: 82, color: '#ef3d76', icon: 'book' },
+          { label: 'Courses', value: 8420, color: '#2d9cea', icon: 'cap' },
+          { label: 'Enrolled Students', value: 78642, color: '#f3a300', icon: 'users' },
+          { label: 'Completed Students', value: 52618, color: '#21ad8a', icon: 'check' }
+        ],
+        courses: [
+          { title: 'Project Management Foundations', partner: '"LinkedIn Learning"', completedAt: '18-03-2026', progress: 100, certificate: true },
+          { title: 'Artificial Intelligence Foundations', partner: '"LinkedIn Learning"', completedAt: '20-03-2026', progress: 88, certificate: true },
+          { title: 'Leading with Emotional Intelligence', partner: '"LinkedIn Learning"', completedAt: '-', progress: 0, certificate: false },
+          { title: 'Data Science Foundations: Fundamentals', partner: '"LinkedIn Learning"', completedAt: '22-03-2026', progress: 94, certificate: true },
+          { title: 'Excel Essential Training (365)', partner: '"LinkedIn Learning"', completedAt: '25-03-2026', progress: 86, certificate: true }
+        ]
+      }
     };
 
-    const docLogos = {
-      'coursera': 'C',
-      'linkedin': 'in'
+    const iconPaths = {
+      book: '<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v15H6.5A2.5 2.5 0 0 0 4 21.5z"></path><path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v15h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path>',
+      cap: '<path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"></path>',
+      users: '<path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>',
+      check: '<circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16 9"></path>'
     };
-
-    const modalOverlay = document.getElementById('modalOverlay');
-    const closeModalBtn = document.getElementById('closeModal');
-
-    function openModal(course, platform) {
-      document.getElementById('modalTitle').textContent = course.title;
-      document.getElementById('modalImage').src = course.image;
-      document.getElementById('modalPlatform').textContent = platformLabels[platform];
-      document.getElementById('modalCategory').textContent = course.category;
-      document.getElementById('modalDuration').textContent = course.duration || 'Flexible';
-      document.getElementById('modalTimeline').textContent = course.timeline || 'On-demand';
-      document.getElementById('modalCharges').textContent = course.charges || 'Included';
-      document.getElementById('modalDescription').textContent = course.description || 'Learn this high-demand skill with industry experts.';
-      
-      modalOverlay.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      modalOverlay.classList.remove('is-open');
-      document.body.style.overflow = '';
-    }
-
-    closeModalBtn.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) closeModal();
-    });
-
-    function createCourseCard(course) {
-      return `
-        <article class="mooc-card animate-fade-up" tabindex="0" role="button">
-          <img class="discover-card__image" src="${course.image}" alt="${course.title}" />
-          <div class="discover-card__body">
-            <div class="discover-card__meta">
-              <span>${course.category}</span>
-              <span class="discover-card__badge">${course.progress}</span>
-            </div>
-            <h3>${course.title}</h3>
-          </div>
-          <div class="discover-card__footer">
-            <div class="discover-card__stats">
-              <span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v14H6.5A2.5 2.5 0 0 0 4 20.5z"></path><path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v14h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path></svg>
-                ${course.lessons}
-              </span>
-              <span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.68 6.27.91-4.54 4.43 1.07 6.25L12 17.27 6.4 20.27l1.07-6.25L2.93 9.6l6.27-.91Z"></path></svg>
-                ${course.rating} rating
-              </span>
-            </div>
-            <img class="discover-card__avatar" src="${course.avatar}" alt="Course mentor" />
-          </div>
-        </article>
-      `;
-    }
 
     const tabs = document.querySelectorAll('.moocs-tab');
+    const metricGrid = document.getElementById('metricGrid');
+    const overviewChart = document.getElementById('overviewChart');
+    const chartLegend = document.getElementById('chartLegend');
+    const tableBody = document.getElementById('moocsTableBody');
+
+    const formatNumber = (value) => new Intl.NumberFormat('en-US').format(value);
+
+    function renderMetrics(metrics) {
+      metricGrid.innerHTML = metrics.map((metric) => `
+        <article class="moocs-metric-card" style="--metric-color: ${metric.color}">
+          <span class="moocs-metric-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">${iconPaths[metric.icon]}</svg>
+          </span>
+          <span>${metric.label}</span>
+          <strong>${formatNumber(metric.value)}</strong>
+        </article>
+      `).join('');
+    }
+
+    function renderChart(metrics) {
+      const maxValue = 200000;
+      overviewChart.innerHTML = `
+        <div class="moocs-chart-y-axis">
+          <span>200K</span>
+          <span>160K</span>
+          <span>120K</span>
+          <span>80K</span>
+          <span>40K</span>
+          <span>0</span>
+        </div>
+        <div class="moocs-chart-plot">
+          ${metrics.map((metric) => `
+            <div class="moocs-chart-bar-group">
+              <strong>${formatNumber(metric.value)}</strong>
+              <span class="moocs-chart-bar" style="--bar-color: ${metric.color}; --bar-height: ${Math.max((metric.value / maxValue) * 100, 2)}%;"></span>
+              <em>${metric.label}</em>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      chartLegend.innerHTML = metrics.map((metric) => `
+        <span><i style="background: ${metric.color}"></i>${metric.label}</span>
+      `).join('');
+    }
+
+    function renderTable(courses) {
+      tableBody.innerHTML = courses.map((course) => `
+        <tr>
+          <td>
+            <span class="moocs-course-name">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H12v15H6.5A2.5 2.5 0 0 0 4 21.5z"></path>
+                <path d="M20 6.5A2.5 2.5 0 0 0 17.5 4H12v15h5.5a2.5 2.5 0 0 1 2.5 2.5z"></path>
+              </svg>
+              ${course.title}
+            </span>
+          </td>
+          <td>${course.partner}</td>
+          <td>
+            <span class="moocs-date">
+              ${course.completedAt !== '-' ? '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path></svg>' : ''}
+              ${course.completedAt}
+            </span>
+          </td>
+          <td>
+            <span class="moocs-progress">
+              <i><b style="width: ${course.progress}%"></b></i>
+              ${course.progress}%
+            </span>
+          </td>
+          <td>
+            ${course.certificate ? '<a class="moocs-certificate-link" href="#">View Certificate <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></a>' : '-'}
+          </td>
+        </tr>
+      `).join('');
+    }
 
     function updateContent(platform) {
-      const label = platformLabels[platform];
-      const courses = platformData[platform] || [];
-      const mainContent = document.querySelector('.moocs-main-content');
+      const data = platformData[platform];
 
-      const platformTitle = document.getElementById('platform-title');
-      const platformSubtitle = document.getElementById('platform-subtitle');
-      if (platformTitle) platformTitle.textContent = label;
-      if (platformSubtitle) platformSubtitle.textContent = label;
+      document.getElementById('summary-title').textContent = `${data.name} Program Summary`;
+      document.getElementById('summary-subtitle').textContent = `Overview of your ${data.name} learning journey`;
+      document.getElementById('overview-title').textContent = `${data.name} Overview`;
+      document.getElementById('course-batch-title').textContent = data.batch;
 
-      const docLogo = document.querySelector('.doc-logo');
-      if (docLogo) {
-        docLogo.textContent = docLogos[platform] || 'L';
-      }
-
-      if (courses.length > 0) {
-        const gridHtml = `<div class="discover-grid">${courses.map(course => createCourseCard(course)).join('')}</div>`;
-        mainContent.innerHTML = gridHtml;
-
-        const newCards = mainContent.querySelectorAll('.mooc-card');
-        newCards.forEach((card, index) => {
-          card.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            openModal(courses[index], platform);
-          });
-        });
-      } else {
-        mainContent.innerHTML = `
-          <div class="empty-state animate-fade-up">
-            <div class="empty-illustration">
-              <div class="illustration-box">
-                <div class="illustration-doc">
-                  <span class="doc-logo">${docLogos[platform] || 'L'}</span>
-                </div>
-                <div class="illustration-alert">!</div>
-              </div>
-              <div class="illustration-dots"></div>
-            </div>
-            <h3 class="empty-title">No ${label} courses found</h3>
-            <p class="empty-desc">We couldn't find any ${label} courses linked to your account. Make sure your account is connected or try again later.</p>
-            <button class="refresh-btn" onclick="location.reload()">
-              <span>Refresh</span>
-              <svg viewBox="0 0 24 24">
-                <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-              </svg>
-            </button>
-          </div>
-        `;
-      }
+      renderMetrics(data.metrics);
+      renderChart(data.metrics);
+      renderTable(data.courses);
     }
 
     tabs.forEach(tab => {
