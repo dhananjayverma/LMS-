@@ -50,10 +50,12 @@ if (courseGrid && previousCoursesButton && nextCoursesButton) {
       smartSpeed: 450,
       responsive: {
         0: {
-          items: 1,
+          items: 2,
+          margin: 10,
         },
         640: {
           items: 2,
+          margin: 12,
         },
         1024: {
           items: 3,

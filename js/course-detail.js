@@ -224,7 +224,7 @@ const getProgressNumber = (value) => {
 };
 
 const defaultCourse = {
-  image: "Frame 414.png",
+  image: "./images/hero.png",
   summary:
     "Explore lessons, assessments, resources, and learning support for this CU LMS course.",
   description:
