@@ -105,95 +105,22 @@
 }
 
 .moocs-chart {
+  position: relative;
+  min-height: 310px;
+}
+
+.moocs-chart canvas {
+  width: 100% !important;
+  height: 310px !important;
+}
+
+.moocs-chart-fallback {
   display: grid;
-  grid-template-columns: 42px minmax(0, 1fr);
   min-height: 230px;
-}
-
-.moocs-chart-y-axis {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 3px 9px 28px 0;
-  color: #667085;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.moocs-chart-plot {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(82px, 1fr));
-  align-items: end;
-  gap: 22px;
-  min-width: 0;
-  padding: 0 6px;
-  border-left: 1px solid #d9dde5;
-  border-bottom: 1px solid #d9dde5;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 39px,
-      rgba(139, 148, 163, 0.22) 40px
-    );
-}
-
-.moocs-chart-bar-group {
-  display: grid;
-  grid-template-rows: 20px 1fr 24px;
-  justify-items: center;
-  align-items: end;
-  height: 100%;
-  min-width: 0;
-  color: #343946;
-}
-
-.moocs-chart-bar-group strong {
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.moocs-chart-bar {
-  display: block;
-  width: min(100%, 78px);
-  height: var(--bar-height);
-  min-height: 3px;
-  border-radius: 3px 3px 0 0;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--bar-color) 72%, #ffffff), var(--bar-color));
-  box-shadow: 0 10px 22px color-mix(in srgb, var(--bar-color) 22%, transparent);
-}
-
-.moocs-chart-bar-group em {
-  align-self: center;
-  min-width: 0;
-  color: #5c6370;
-  font-size: 12px;
-  font-style: normal;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.moocs-chart-legend {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 14px;
-}
-
-.moocs-chart-legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  place-items: center;
+  margin: 0;
   color: #667085;
   font-size: 13px;
-}
-
-.moocs-chart-legend i {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
 }
 
 .moocs-table-card {
@@ -237,6 +164,10 @@
   border-radius: 6px;
 }
 
+.moocs-batch + .moocs-batch {
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+
 .moocs-course-panel__header {
   display: flex;
   align-items: center;
@@ -248,11 +179,49 @@
   background: linear-gradient(180deg, #e11d0f 0%, #bb160b 100%);
 }
 
-.moocs-course-panel__header h2 {
+.moocs-batch-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+}
+
+.moocs-batch-toggle span {
+  overflow-wrap: anywhere;
+}
+
+.moocs-batch-toggle svg {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.moocs-batch.is-open .moocs-batch-toggle svg {
+  transform: rotate(180deg);
+}
+
+.moocs-course-panel__header h2,
+.moocs-batch-toggle {
   margin: 0;
   font-size: 15px;
   line-height: 1.25;
-  font-weight: 800;
+}
+
+.moocs-batch-content {
+  border-bottom: 1px solid rgba(20, 28, 45, 0.1);
+}
+
+.moocs-batch:last-child .moocs-batch-content {
+  border-bottom: 0;
 }
 
 .moocs-certificate-btn {
@@ -416,6 +385,11 @@
     padding: 14px;
   }
 
+  .moocs-batch-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .moocs-certificate-btn {
     width: 100%;
   }
@@ -473,61 +447,11 @@
   }
 
   .moocs-chart {
-    grid-template-columns: 32px minmax(0, 1fr);
     min-width: 0;
     min-height: 200px;
   }
 
-  .moocs-chart-y-axis {
-    padding: 2px 6px 32px 0;
-    font-size: 10px;
-  }
-
-  .moocs-chart-plot {
-    grid-template-columns: repeat(4, minmax(46px, 1fr));
-    gap: 10px;
-    padding: 0 2px;
-    background:
-      repeating-linear-gradient(
-        to bottom,
-        transparent 0,
-        transparent 33px,
-        rgba(139, 148, 163, 0.18) 34px
-      );
-  }
-
-  .moocs-chart-bar-group {
-    grid-template-rows: 18px 1fr 34px;
-  }
-
-  .moocs-chart-bar-group strong {
-    font-size: 10px;
-  }
-
-  .moocs-chart-bar {
-    width: min(100%, 42px);
-  }
-
-  .moocs-chart-bar-group em {
-    align-self: start;
-    font-size: 10px;
-    line-height: 1.2;
-    white-space: normal;
-    word-break: break-word;
-  }
-
-  .moocs-chart-legend {
-    justify-content: flex-start;
-    gap: 10px 14px;
-    margin-top: 12px;
-  }
-
-  .moocs-chart-legend span {
-    font-size: 11px;
-  }
-
-  .moocs-chart-legend i {
-    width: 9px;
-    height: 9px;
+  .moocs-chart canvas {
+    height: 210px !important;
   }
 }

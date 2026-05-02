@@ -94,8 +94,9 @@
               <h2 id="overview-title">Coursera Overview</h2>
               <p>Comparative summary of key metrics</p>
             </div>
-            <div class="moocs-chart" id="overviewChart" aria-label="Program metrics chart"></div>
-            <div class="moocs-chart-legend" id="chartLegend"></div>
+            <div class="moocs-chart" id="overviewChart" aria-label="Course progress chart">
+              <canvas id="courseProgressChart"></canvas>
+            </div>
           </div>
         </div>
 
@@ -106,43 +107,7 @@
           </div>
 
           <div class="moocs-course-panel">
-            <div class="moocs-course-panel__header">
-              <h2 id="course-batch-title">CSE 3rd Year_JJ_2026 (VAC)</h2>
-              <button class="moocs-certificate-btn" type="button">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8 3v4"></path>
-                  <path d="M16 3v4"></path>
-                  <rect x="4" y="5" width="16" height="16" rx="2"></rect>
-                  <path d="M8 11h8"></path>
-                  <path d="M8 15h5"></path>
-                </svg>
-                My Certificate
-              </button>
-            </div>
-
-            <div class="moocs-table-wrap">
-              <table class="moocs-course-table">
-                <thead>
-                  <tr>
-                    <th>
-                      <span class="table-head-icon">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                          <rect x="4" y="5" width="16" height="16" rx="2"></rect>
-                          <path d="M8 3v4"></path>
-                          <path d="M16 3v4"></path>
-                        </svg>
-                        Course
-                      </span>
-                    </th>
-                    <th>Partner</th>
-                    <th>Completed At</th>
-                    <th>Progress</th>
-                    <th>Certificate</th>
-                  </tr>
-                </thead>
-                <tbody id="moocsTableBody"></tbody>
-              </table>
-            </div>
+            <div class="moocs-batch-list" id="moocsBatchList"></div>
           </div>
         </div>
       </section>
@@ -244,6 +209,7 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./js/moocs.js"></script>
 </body>
 
