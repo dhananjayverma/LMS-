@@ -6287,3 +6287,427 @@ body {
     display: none;
   }
 }
+
+/* Dark Mode */
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70px;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(20, 28, 45, 0.18);
+  transition: transform 200ms ease;
+}
+
+.theme-toggle__icon {
+  position: relative;
+  z-index: 1;
+  width: 15px;
+  height: 15px;
+  display: inline-flex;
+  color: currentColor;
+}
+
+.theme-toggle__icon svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 2.2;
+}
+
+.theme-toggle__icon--sun {
+  color: #ef2326;
+}
+
+.theme-toggle__icon--moon {
+  color: #ffffff;
+}
+
+body.dark-mode .theme-toggle {
+  background: rgba(15, 23, 42, 0.38);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+body.dark-mode .theme-toggle::before {
+  transform: translateX(32px);
+  background: #f8fafc;
+}
+
+body.dark-mode .theme-toggle__icon--sun {
+  color: #ffffff;
+}
+
+body.dark-mode .theme-toggle__icon--moon {
+  color: #0f172a;
+}
+
+body.dark-mode {
+  --bg: #0b1020;
+  --surface: #111827;
+  --text: #f8fafc;
+  --muted: #a7b0c2;
+  --line: rgba(226, 232, 240, 0.14);
+  --brand-soft: rgba(239, 35, 38, 0.18);
+  --shadow-soft: 0 18px 38px rgba(0, 0, 0, 0.28);
+  --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.3);
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(239, 35, 38, 0.18), transparent 28%),
+    radial-gradient(circle at 96% 20%, rgba(34, 197, 94, 0.09), transparent 22%),
+    linear-gradient(180deg, #080c18 0%, #101827 100%);
+}
+
+body.dark-mode .site-header {
+  background: rgba(149, 18, 24, 0.96);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.36);
+}
+
+body.dark-mode .profile-menu {
+  background: rgba(17, 24, 39, 0.98);
+  border-color: var(--line);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
+}
+
+body.dark-mode .dash-hero,
+body.dark-mode .dash-side-stats,
+body.dark-mode .q-stat-card,
+body.dark-mode .dash-card,
+body.dark-mode .date-picker-mock,
+body.dark-mode .course-card,
+body.dark-mode .courses-section,
+body.dark-mode .floating-card,
+body.dark-mode .announcement-card {
+  background: rgba(17, 24, 39, 0.92);
+  border-color: var(--line);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+}
+
+body.dark-mode .dash-hero__image-container::before {
+  background: rgba(239, 35, 38, 0.14);
+}
+
+body.dark-mode .dash-hero__image {
+  mix-blend-mode: normal;
+}
+
+body.dark-mode .dash-hero__pattern {
+  opacity: 0.7;
+}
+
+body.dark-mode .dash-hero__title,
+body.dark-mode .s-info strong,
+body.dark-mode .q-body strong,
+body.dark-mode .card-title,
+body.dark-mode .section-header h2,
+body.dark-mode .course-card h3,
+body.dark-mode .legend-item,
+body.dark-mode .d-label,
+body.dark-mode .insight-info strong,
+body.dark-mode .insight-value,
+body.dark-mode .cal-current-month,
+body.dark-mode .cp-name,
+body.dark-mode .cp-percentage,
+body.dark-mode .assign-name,
+body.dark-mode .assign-status,
+body.dark-mode .tab-btn,
+body.dark-mode .activity-item,
+body.dark-mode .cal-w-date,
+body.dark-mode .analytics-header h2[style],
+body.dark-mode .donut-inner strong[style],
+body.dark-mode .access-info strong[style] {
+  color: var(--text) !important;
+}
+
+body.dark-mode .dash-hero__eyebrow,
+body.dark-mode .dash-hero__desc,
+body.dark-mode .s-info span,
+body.dark-mode .q-body span,
+body.dark-mode .section-header p,
+body.dark-mode .course-card p,
+body.dark-mode .d-time,
+body.dark-mode .insight-info span,
+body.dark-mode .assign-course,
+body.dark-mode .cal-w-day,
+body.dark-mode .cal-w-date.muted,
+body.dark-mode .date-picker-mock span[style],
+body.dark-mode .access-info span[style] {
+  color: var(--muted) !important;
+}
+
+body.dark-mode .dash-hero .btn[style],
+body.dark-mode .btn-outline[style],
+body.dark-mode .time-allocation-section .btn[style],
+body.dark-mode .insights-section .btn[style],
+body.dark-mode .role-selector-container select[style],
+body.dark-mode .access-card[style],
+body.dark-mode .date-picker-mock[style],
+body.dark-mode .empty-icon[style] {
+  background: #111827 !important;
+  border-color: var(--line) !important;
+  color: var(--text) !important;
+}
+
+body.dark-mode .dash-hero .btn:first-child[style] {
+  background: var(--brand) !important;
+  border-color: var(--brand) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .analytics-select {
+  background: #0f172a;
+  color: var(--text);
+  border-color: var(--line);
+}
+
+body.dark-mode .more-btn {
+  color: var(--muted);
+}
+
+body.dark-mode .avg-line span,
+body.dark-mode .chart-tooltip,
+body.dark-mode .donut-inner {
+  background: #0f172a;
+  border-color: var(--line);
+  color: var(--text);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.36);
+}
+
+body.dark-mode .chart-tooltip::after {
+  background: #0f172a;
+  border-color: var(--line);
+}
+
+body.dark-mode .c-bar-fill span,
+body.dark-mode .c-bar-label,
+body.dark-mode .chart-y-axis,
+body.dark-mode .avg-line small {
+  color: var(--muted);
+}
+
+body.dark-mode .insights-section {
+  background: rgba(15, 23, 42, 0.72);
+}
+
+body.dark-mode .insight-item,
+body.dark-mode .activity-tabs,
+body.dark-mode .side-stat-card:not(:last-child)::after {
+  border-color: var(--line) !important;
+}
+
+body.dark-mode .activity-item,
+body.dark-mode .assign-item,
+body.dark-mode .dash-list-item {
+  background: rgba(15, 23, 42, 0.72);
+  border-color: var(--line);
+}
+
+body.dark-mode .btn-open {
+  background: rgba(239, 35, 38, 0.16);
+  color: #ffb4b8;
+  border-color: rgba(239, 35, 38, 0.24);
+}
+
+body.dark-mode .tab-btn.active {
+  color: #ffb4b8;
+}
+
+body.dark-mode .tab-btn.active::after {
+  background: #ffb4b8;
+}
+
+body.dark-mode .calendar-top-bar[style] {
+  background: #005f55 !important;
+}
+
+body.dark-mode .s-icon--green {
+  background: rgba(95, 185, 108, 0.16);
+}
+
+body.dark-mode .s-icon--pink {
+  background: rgba(233, 91, 143, 0.16);
+}
+
+body.dark-mode .s-icon--yellow {
+  background: rgba(244, 183, 31, 0.16);
+}
+
+body.dark-mode .s-icon--blue {
+  background: rgba(74, 157, 245, 0.16);
+}
+
+body.dark-mode .cp-bar-container,
+body.dark-mode .progress__track,
+body.dark-mode .goal-progress-bar {
+  background: rgba(226, 232, 240, 0.14);
+}
+
+body.dark-mode .footer-bg-blobs {
+  opacity: 0.28;
+}
+
+@media (max-width: 560px) {
+  .navbar {
+    gap: 8px;
+  }
+
+  .brand__logo {
+    width: 78px;
+  }
+
+  .navbar__actions {
+    gap: 4px;
+  }
+
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .theme-toggle::before {
+    display: none;
+  }
+
+  .theme-toggle__icon {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 160ms ease;
+  }
+
+  .theme-toggle__icon--moon {
+    opacity: 1;
+  }
+
+  body.dark-mode .theme-toggle__icon--sun {
+    opacity: 1;
+  }
+
+  body.dark-mode .theme-toggle__icon--moon {
+    opacity: 0;
+  }
+
+  body.dark-mode .navbar__links {
+    background: rgba(17, 24, 39, 0.98);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+  }
+}
+
+body.dark-mode .hero,
+body.dark-mode .discover-section,
+body.dark-mode .mycourses-hero,
+body.dark-mode .mycourses-page-section,
+body.dark-mode .course-workspace,
+body.dark-mode .course-toolbar,
+body.dark-mode .mycourses-page .discover-toolbar,
+body.dark-mode .toolbar-field,
+body.dark-mode .course-search,
+body.dark-mode .course-workspace__back,
+body.dark-mode .course-filter-tabs button,
+body.dark-mode .mycourse-card,
+body.dark-mode .discover-card,
+body.dark-mode .mooc-card {
+  background: rgba(17, 24, 39, 0.88);
+  border-color: var(--line);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+}
+
+body.dark-mode .hero::before,
+body.dark-mode .mycourses-hero,
+body.dark-mode .content-card--highlight {
+  background:
+    linear-gradient(135deg, rgba(239, 35, 38, 0.14), transparent 46%),
+    rgba(17, 24, 39, 0.88);
+}
+
+body.dark-mode .hero__eyebrow,
+body.dark-mode .mycourses-summary div,
+body.dark-mode .course-metric,
+body.dark-mode .quick-facts div {
+  background: rgba(239, 35, 38, 0.12);
+  border-color: rgba(239, 35, 38, 0.22);
+}
+
+body.dark-mode .hero__title,
+body.dark-mode .feature-item strong,
+body.dark-mode .discover-header h2,
+body.dark-mode .discover-card h3,
+body.dark-mode .mooc-card h3,
+body.dark-mode .mycourses-hero h1,
+body.dark-mode .course-workspace h1,
+body.dark-mode .mycourse-card h3,
+body.dark-mode .course-workspace__back,
+body.dark-mode .course-filter-tabs button,
+body.dark-mode .toolbar-field input,
+body.dark-mode .toolbar-field select,
+body.dark-mode .course-search input {
+  color: var(--text);
+}
+
+body.dark-mode .hero__description,
+body.dark-mode .feature-item span:last-child,
+body.dark-mode .discover-header p,
+body.dark-mode .discover-card__stats,
+body.dark-mode .mycourses-hero p,
+body.dark-mode .course-workspace p,
+body.dark-mode .course-metric span,
+body.dark-mode .mycourses-summary span,
+body.dark-mode .mycourse-card__footer,
+body.dark-mode .toolbar-field input::placeholder,
+body.dark-mode .course-search input::placeholder {
+  color: var(--muted);
+}
+
+body.dark-mode .secondary-btn,
+body.dark-mode .slider-btn--light {
+  background: #111827;
+  border-color: var(--line);
+  color: var(--text);
+}
+
+body.dark-mode .course-filter-tabs button.is-active {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+body.dark-mode .mycourse-progress {
+  background: rgba(226, 232, 240, 0.14);
+}
+
+body.dark-mode .site-footer {
+  background: linear-gradient(180deg, #111827 0%, #070b14 100%);
+}
+
+body.dark-mode .footer-title,
+body.dark-mode .footer-description,
+body.dark-mode .footer-links a,
+body.dark-mode .footer-copyright {
+  color: var(--text);
+}
+
+body.dark-mode .footer-icon-link {
+  border-color: var(--line);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
+}

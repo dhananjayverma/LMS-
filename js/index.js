@@ -1,6 +1,81 @@
 const navLinks = document.querySelectorAll(".nav-link");
 const siteHeader = document.querySelector(".site-header");
 const menuButton = document.querySelector(".menu-btn");
+//darkmode  code inspired by 
+
+let themeToggle = document.getElementById("themeToggle");
+
+const createThemeToggle = () => {
+  const actions = document.querySelector(".navbar__actions, .course-header__actions");
+
+  if (!actions) {
+    return null;
+  }
+
+  const button = document.createElement("button");
+  button.className = "theme-toggle";
+  button.id = "themeToggle";
+  button.type = "button";
+  button.setAttribute("aria-label", "Switch to dark mode");
+  button.setAttribute("aria-pressed", "false");
+  button.innerHTML = `
+    <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2"></path>
+        <path d="M12 20v2"></path>
+        <path d="m4.93 4.93 1.41 1.41"></path>
+        <path d="m17.66 17.66 1.41 1.41"></path>
+        <path d="M2 12h2"></path>
+        <path d="M20 12h2"></path>
+        <path d="m6.34 17.66-1.41 1.41"></path>
+        <path d="m19.07 4.93-1.41 1.41"></path>
+      </svg>
+    </span>
+    <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 7 7 0 1 0 20.5 14.5z"></path>
+      </svg>
+    </span>
+  `;
+  actions.insertBefore(button, actions.firstElementChild);
+  return button;
+};
+
+themeToggle = themeToggle || createThemeToggle();
+
+// Ensure themeToggle is properly selected even if it exists in HTML
+if (!themeToggle) {
+  themeToggle = document.querySelector(".theme-toggle");
+}
+
+const setTheme = (theme) => {
+  const isDark = theme === "dark";
+  document.body.classList.toggle("dark-mode", isDark);
+
+  if (themeToggle) {
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  }
+};
+
+const savedTheme = localStorage.getItem("lms-theme");
+const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+// Attach theme toggle listener with fallback
+const attachThemeToggleListener = () => {
+  const toggle = document.getElementById("themeToggle") || document.querySelector(".theme-toggle");
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const nextTheme = document.body.classList.contains("dark-mode") ? "light" : "dark";
+      localStorage.setItem("lms-theme", nextTheme);
+      setTheme(nextTheme);
+    });
+  }
+};
+
+attachThemeToggleListener();
 
 const closeMenu = () => {
   if (!siteHeader || !menuButton) {

@@ -129,6 +129,13 @@ function renderChart(batches) {
   }
 
   overviewChart.setAttribute('aria-label', 'Course progress summary chart');
+
+  // dark mode adjustments
+
+  const isDark = document.body.classList.contains('dark-mode');
+  const tickColor = isDark ? '#a7b0c2' : '#667085';
+  const gridColor = isDark ? 'rgba(226, 232, 240, 0.12)' : 'rgba(139, 148, 163, 0.2)';
+
   courseProgressChart = new Chart(canvas.getContext('2d'), {
     type: 'bar',
     data: {
@@ -179,7 +186,7 @@ function renderChart(batches) {
           border: { display: false },
           grid: { display: false },
           ticks: {
-            color: '#667085',
+            color: tickColor,
             maxRotation: 0,
             minRotation: 0,
             autoSkip: false,
@@ -200,12 +207,12 @@ function renderChart(batches) {
           max: 100,
           ticks: {
             stepSize: 20,
-            color: '#667085',
+            color: tickColor,
             font: { size: 12, weight: '600' },
             callback: (value) => `${value}%`
           },
           border: { display: false },
-          grid: { color: 'rgba(139, 148, 163, 0.2)', drawTicks: false }
+          grid: { color: gridColor, drawTicks: false }
         }
       },
       plugins: {
@@ -375,66 +382,3 @@ tabs.forEach(tab => {
 
 updateContent('coursera');
 
-// Navbar Mobile Menu Logic
-const siteHeader = document.querySelector(".site-header");
-const menuButton = document.querySelector(".menu-btn");
-const navLinks = document.querySelectorAll(".nav-link");
-
-const closeMenu = () => {
-  if (!siteHeader || !menuButton) {
-    return;
-  }
-
-  siteHeader.classList.remove("is-open");
-  menuButton.setAttribute("aria-expanded", "false");
-};
-
-if (menuButton && siteHeader) {
-  menuButton.addEventListener("click", () => {
-    const isOpen = siteHeader.classList.toggle("is-open");
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 820) {
-      closeMenu();
-    }
-  });
-}
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.forEach((item) => item.classList.remove("active"));
-    link.classList.add("active");
-    closeMenu();
-  });
-});
-
-// Profile Dropdown Logic
-const profileDropdown = document.getElementById("profileDropdown");
-if (profileDropdown) {
-  const profileBtn = profileDropdown.querySelector(".profile-btn");
-  const chevronBtn = profileDropdown.querySelector(".chevron-btn");
-
-  const toggleDropdown = (e) => {
-    e.stopPropagation();
-    profileDropdown.classList.toggle("is-active");
-  };
-
-  profileBtn.addEventListener("click", toggleDropdown);
-  chevronBtn.addEventListener("click", toggleDropdown);
-
-  // Close when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!profileDropdown.contains(e.target)) {
-      profileDropdown.classList.remove("is-active");
-    }
-  });
-
-  // Close on Escape key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      profileDropdown.classList.remove("is-active");
-    }
-  });
-}

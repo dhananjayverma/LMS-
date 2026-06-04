@@ -455,3 +455,111 @@
     height: 210px !important;
   }
 }
+
+/* ── Dark Mode ── */
+body.dark-mode .moocs-summary-card,
+body.dark-mode .moocs-table-card {
+  background: rgba(17, 24, 39, 0.92);
+  border-color: rgba(226, 232, 240, 0.14);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+}
+
+body.dark-mode .moocs-summary-heading h1 {
+  color: #ff6b5e;
+}
+
+body.dark-mode .moocs-summary-heading h2 {
+  color: #f8fafc;
+}
+
+body.dark-mode .moocs-summary-heading p {
+  color: #a7b0c2;
+}
+
+body.dark-mode .moocs-metric-card {
+  background: color-mix(in srgb, var(--metric-color) 12%, #111827);
+  border-color: color-mix(in srgb, var(--metric-color) 22%, #111827);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+body.dark-mode .moocs-metric-icon {
+  background: color-mix(in srgb, var(--metric-color) 18%, #111827);
+}
+
+body.dark-mode .moocs-metric-card span:not(.moocs-metric-icon) {
+  color: #a7b0c2;
+}
+
+body.dark-mode .moocs-overview-panel {
+  border-color: rgba(226, 232, 240, 0.14);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .moocs-chart-fallback {
+  color: #a7b0c2;
+}
+
+body.dark-mode .moocs-table-card .moocs-tabs {
+  border-bottom-color: rgba(226, 232, 240, 0.14);
+}
+
+body.dark-mode .moocs-table-card .moocs-tab {
+  color: #a7b0c2;
+}
+
+body.dark-mode .moocs-table-card .moocs-tab.active {
+  color: #ff6b5e;
+}
+
+body.dark-mode .moocs-table-card .moocs-tab.active::after {
+  background: #ff6b5e;
+}
+
+body.dark-mode .moocs-course-panel {
+  border-color: rgba(226, 232, 240, 0.14);
+}
+
+body.dark-mode .moocs-course-panel__header {
+  background: linear-gradient(180deg, #b91c1c 0%, #991b1b 100%);
+}
+
+body.dark-mode .moocs-batch-content {
+  border-bottom-color: rgba(226, 232, 240, 0.14);
+}
+
+body.dark-mode .moocs-table-wrap {
+  background: #111827;
+}
+
+body.dark-mode .moocs-course-table th {
+  color: #a7b0c2;
+  background: #0f172a;
+}
+
+body.dark-mode .moocs-course-table td {
+  color: #cbd5e1;
+}
+
+body.dark-mode .moocs-course-table th,
+body.dark-mode .moocs-course-table td {
+  border-bottom-color: rgba(226, 232, 240, 0.1);
+}
+
+body.dark-mode .moocs-course-name svg,
+body.dark-mode .moocs-certificate-link {
+  color: #ff6b5e;
+}
+
+body.dark-mode .moocs-progress i {
+  background: rgba(226, 232, 240, 0.14);
+}
+
+body.dark-mode .moocs-certificate-btn {
+  color: #ff6b5e;
+  background: rgba(17, 24, 39, 0.92);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .moocs-batch + .moocs-batch {
+  border-top-color: rgba(226, 232, 240, 0.14);
+}
